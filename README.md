@@ -8,3 +8,6 @@ You are free to download the code for the purpose of examining it.
 
 ## Links
 LinkedIn: https://www.linkedin.com/in/frederick-l-nielsen-159028153/details/experience/ 
+
+## Contact info
+E-mail: Frederick.nielsen01@gmail.com
