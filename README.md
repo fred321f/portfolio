@@ -4,7 +4,6 @@ I am a student at Aarhus Universitet, studying for my bachelor's degree in Softw
 
 ## Using my code in your projects
 If you download my code for the purpose of using it in your own project, you must under any cirrcumstances give me credit for the code.
-
 You are free to download the code for the purpose of examining it.
 
 ## Links
