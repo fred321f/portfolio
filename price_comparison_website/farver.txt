@@ -1,7 +1,0 @@
-Callme
-BG: #EB0101
-color: white
-
-Telmore
-BG: #002788
-volor: #ffcae3
