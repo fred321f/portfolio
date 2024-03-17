@@ -1,0 +1,1603 @@
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 1060
+  28              	cy_meta_configecc:
+  29 0000 01       		.byte	1
+  30 0001 64       		.byte	100
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 02       		.byte	2
+  34 0005 65       		.byte	101
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 54       		.byte	84
+  38 0009 08       		.byte	8
+  39 000a 01       		.byte	1
+  40 000b 40       		.byte	64
+  41 000c 36       		.byte	54
+  42 000d 09       		.byte	9
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 03       		.byte	3
+  46 0011 15       		.byte	21
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 01       		.byte	1
+  50 0015 17       		.byte	23
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 42       		.byte	66
+  54 0019 18       		.byte	24
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 44       		.byte	68
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 2
+
+
+  58 001d 19       		.byte	25
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 4D       		.byte	77
+  62 0021 1A       		.byte	26
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 4A       		.byte	74
+  66 0025 1B       		.byte	27
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 02       		.byte	2
+  70 0029 42       		.byte	66
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 01       		.byte	1
+  74 002d 43       		.byte	67
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 03       		.byte	3
+  78 0031 48       		.byte	72
+  79 0032 01       		.byte	1
+  80 0033 40       		.byte	64
+  81 0034 10       		.byte	16
+  82 0035 49       		.byte	73
+  83 0036 01       		.byte	1
+  84 0037 40       		.byte	64
+  85 0038 0B       		.byte	11
+  86 0039 4C       		.byte	76
+  87 003a 01       		.byte	1
+  88 003b 40       		.byte	64
+  89 003c 0C       		.byte	12
+  90 003d 4D       		.byte	77
+  91 003e 01       		.byte	1
+  92 003f 40       		.byte	64
+  93 0040 04       		.byte	4
+  94 0041 50       		.byte	80
+  95 0042 01       		.byte	1
+  96 0043 40       		.byte	64
+  97 0044 01       		.byte	1
+  98 0045 51       		.byte	81
+  99 0046 01       		.byte	1
+ 100 0047 40       		.byte	64
+ 101 0048 88       		.byte	-120
+ 102 0049 38       		.byte	56
+ 103 004a 89       		.byte	-119
+ 104 004b 72       		.byte	114
+ 105 004c 8B       		.byte	-117
+ 106 004d 0F       		.byte	15
+ 107 004e 03       		.byte	3
+ 108 004f 03       		.byte	3
+ 109 0050 0B       		.byte	11
+ 110 0051 02       		.byte	2
+ 111 0052 0C       		.byte	12
+ 112 0053 0C       		.byte	12
+ 113 0054 0E       		.byte	14
+ 114 0055 03       		.byte	3
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 3
+
+
+ 115 0056 12       		.byte	18
+ 116 0057 10       		.byte	16
+ 117 0058 16       		.byte	22
+ 118 0059 08       		.byte	8
+ 119 005a 17       		.byte	23
+ 120 005b 05       		.byte	5
+ 121 005c 1A       		.byte	26
+ 122 005d 10       		.byte	16
+ 123 005e 1D       		.byte	29
+ 124 005f 06       		.byte	6
+ 125 0060 1E       		.byte	30
+ 126 0061 0C       		.byte	12
+ 127 0062 1F       		.byte	31
+ 128 0063 01       		.byte	1
+ 129 0064 20       		.byte	32
+ 130 0065 01       		.byte	1
+ 131 0066 22       		.byte	34
+ 132 0067 0E       		.byte	14
+ 133 0068 23       		.byte	35
+ 134 0069 06       		.byte	6
+ 135 006a 24       		.byte	36
+ 136 006b 01       		.byte	1
+ 137 006c 26       		.byte	38
+ 138 006d 06       		.byte	6
+ 139 006e 2A       		.byte	42
+ 140 006f 03       		.byte	3
+ 141 0070 2B       		.byte	43
+ 142 0071 01       		.byte	1
+ 143 0072 30       		.byte	48
+ 144 0073 10       		.byte	16
+ 145 0074 36       		.byte	54
+ 146 0075 0F       		.byte	15
+ 147 0076 37       		.byte	55
+ 148 0077 07       		.byte	7
+ 149 0078 3A       		.byte	58
+ 150 0079 80       		.byte	-128
+ 151 007a 3B       		.byte	59
+ 152 007b 80       		.byte	-128
+ 153 007c 3E       		.byte	62
+ 154 007d 01       		.byte	1
+ 155 007e 40       		.byte	64
+ 156 007f 36       		.byte	54
+ 157 0080 41       		.byte	65
+ 158 0081 04       		.byte	4
+ 159 0082 45       		.byte	69
+ 160 0083 0C       		.byte	12
+ 161 0084 46       		.byte	70
+ 162 0085 E0       		.byte	-32
+ 163 0086 47       		.byte	71
+ 164 0087 0B       		.byte	11
+ 165 0088 48       		.byte	72
+ 166 0089 19       		.byte	25
+ 167 008a 49       		.byte	73
+ 168 008b FF       		.byte	-1
+ 169 008c 4A       		.byte	74
+ 170 008d FF       		.byte	-1
+ 171 008e 4B       		.byte	75
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 4
+
+
+ 172 008f FF       		.byte	-1
+ 173 0090 4E       		.byte	78
+ 174 0091 F0       		.byte	-16
+ 175 0092 4F       		.byte	79
+ 176 0093 44       		.byte	68
+ 177 0094 50       		.byte	80
+ 178 0095 0C       		.byte	12
+ 179 0096 54       		.byte	84
+ 180 0097 18       		.byte	24
+ 181 0098 58       		.byte	88
+ 182 0099 04       		.byte	4
+ 183 009a 59       		.byte	89
+ 184 009b 04       		.byte	4
+ 185 009c 5A       		.byte	90
+ 186 009d 04       		.byte	4
+ 187 009e 5B       		.byte	91
+ 188 009f 04       		.byte	4
+ 189 00a0 5F       		.byte	95
+ 190 00a1 01       		.byte	1
+ 191 00a2 66       		.byte	102
+ 192 00a3 C0       		.byte	-64
+ 193 00a4 6A       		.byte	106
+ 194 00a5 40       		.byte	64
+ 195 00a6 6B       		.byte	107
+ 196 00a7 02       		.byte	2
+ 197 00a8 80       		.byte	-128
+ 198 00a9 1C       		.byte	28
+ 199 00aa 82       		.byte	-126
+ 200 00ab 02       		.byte	2
+ 201 00ac 84       		.byte	-124
+ 202 00ad 10       		.byte	16
+ 203 00ae 87       		.byte	-121
+ 204 00af 01       		.byte	1
+ 205 00b0 8A       		.byte	-118
+ 206 00b1 03       		.byte	3
+ 207 00b2 8C       		.byte	-116
+ 208 00b3 0C       		.byte	12
+ 209 00b4 8E       		.byte	-114
+ 210 00b5 11       		.byte	17
+ 211 00b6 91       		.byte	-111
+ 212 00b7 03       		.byte	3
+ 213 00b8 95       		.byte	-107
+ 214 00b9 03       		.byte	3
+ 215 00ba A0       		.byte	-96
+ 216 00bb 09       		.byte	9
+ 217 00bc A2       		.byte	-94
+ 218 00bd 10       		.byte	16
+ 219 00be A4       		.byte	-92
+ 220 00bf 14       		.byte	20
+ 221 00c0 A5       		.byte	-91
+ 222 00c1 04       		.byte	4
+ 223 00c2 A8       		.byte	-88
+ 224 00c3 10       		.byte	16
+ 225 00c4 AA       		.byte	-86
+ 226 00c5 0C       		.byte	12
+ 227 00c6 AD       		.byte	-83
+ 228 00c7 02       		.byte	2
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 5
+
+
+ 229 00c8 B1       		.byte	-79
+ 230 00c9 03       		.byte	3
+ 231 00ca B2       		.byte	-78
+ 232 00cb 1F       		.byte	31
+ 233 00cc B3       		.byte	-77
+ 234 00cd 04       		.byte	4
+ 235 00ce B9       		.byte	-71
+ 236 00cf 02       		.byte	2
+ 237 00d0 BF       		.byte	-65
+ 238 00d1 05       		.byte	5
+ 239 00d2 C0       		.byte	-64
+ 240 00d3 04       		.byte	4
+ 241 00d4 C5       		.byte	-59
+ 242 00d5 04       		.byte	4
+ 243 00d6 C9       		.byte	-55
+ 244 00d7 FF       		.byte	-1
+ 245 00d8 CA       		.byte	-54
+ 246 00d9 07       		.byte	7
+ 247 00da CB       		.byte	-53
+ 248 00db FF       		.byte	-1
+ 249 00dc CC       		.byte	-52
+ 250 00dd 40       		.byte	64
+ 251 00de CD       		.byte	-51
+ 252 00df 20       		.byte	32
+ 253 00e0 CE       		.byte	-50
+ 254 00e1 F0       		.byte	-16
+ 255 00e2 CF       		.byte	-49
+ 256 00e3 05       		.byte	5
+ 257 00e4 D0       		.byte	-48
+ 258 00e5 08       		.byte	8
+ 259 00e6 D8       		.byte	-40
+ 260 00e7 04       		.byte	4
+ 261 00e8 D9       		.byte	-39
+ 262 00e9 04       		.byte	4
+ 263 00ea DA       		.byte	-38
+ 264 00eb 04       		.byte	4
+ 265 00ec DF       		.byte	-33
+ 266 00ed 01       		.byte	1
+ 267 00ee E0       		.byte	-32
+ 268 00ef 40       		.byte	64
+ 269 00f0 E1       		.byte	-31
+ 270 00f1 A8       		.byte	-88
+ 271 00f2 E2       		.byte	-30
+ 272 00f3 40       		.byte	64
+ 273 00f4 E3       		.byte	-29
+ 274 00f5 20       		.byte	32
+ 275 00f6 00       		.byte	0
+ 276 00f7 12       		.byte	18
+ 277 00f8 02       		.byte	2
+ 278 00f9 20       		.byte	32
+ 279 00fa 03       		.byte	3
+ 280 00fb 01       		.byte	1
+ 281 00fc 05       		.byte	5
+ 282 00fd 40       		.byte	64
+ 283 00fe 0C       		.byte	12
+ 284 00ff 80       		.byte	-128
+ 285 0100 0D       		.byte	13
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 6
+
+
+ 286 0101 01       		.byte	1
+ 287 0102 0E       		.byte	14
+ 288 0103 20       		.byte	32
+ 289 0104 0F       		.byte	15
+ 290 0105 08       		.byte	8
+ 291 0106 10       		.byte	16
+ 292 0107 84       		.byte	-124
+ 293 0108 11       		.byte	17
+ 294 0109 08       		.byte	8
+ 295 010a 12       		.byte	18
+ 296 010b 80       		.byte	-128
+ 297 010c 16       		.byte	22
+ 298 010d 04       		.byte	4
+ 299 010e 17       		.byte	23
+ 300 010f 05       		.byte	5
+ 301 0110 18       		.byte	24
+ 302 0111 10       		.byte	16
+ 303 0112 19       		.byte	25
+ 304 0113 08       		.byte	8
+ 305 0114 1C       		.byte	28
+ 306 0115 02       		.byte	2
+ 307 0116 1D       		.byte	29
+ 308 0117 40       		.byte	64
+ 309 0118 1F       		.byte	31
+ 310 0119 01       		.byte	1
+ 311 011a 21       		.byte	33
+ 312 011b 02       		.byte	2
+ 313 011c 22       		.byte	34
+ 314 011d 04       		.byte	4
+ 315 011e 27       		.byte	39
+ 316 011f 01       		.byte	1
+ 317 0120 29       		.byte	41
+ 318 0121 48       		.byte	72
+ 319 0122 2C       		.byte	44
+ 320 0123 80       		.byte	-128
+ 321 0124 2F       		.byte	47
+ 322 0125 08       		.byte	8
+ 323 0126 30       		.byte	48
+ 324 0127 04       		.byte	4
+ 325 0128 33       		.byte	51
+ 326 0129 05       		.byte	5
+ 327 012a 35       		.byte	53
+ 328 012b 40       		.byte	64
+ 329 012c 37       		.byte	55
+ 330 012d 04       		.byte	4
+ 331 012e 38       		.byte	56
+ 332 012f 08       		.byte	8
+ 333 0130 3C       		.byte	60
+ 334 0131 20       		.byte	32
+ 335 0132 3D       		.byte	61
+ 336 0133 02       		.byte	2
+ 337 0134 41       		.byte	65
+ 338 0135 02       		.byte	2
+ 339 0136 45       		.byte	69
+ 340 0137 01       		.byte	1
+ 341 0138 47       		.byte	71
+ 342 0139 05       		.byte	5
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 7
+
+
+ 343 013a 48       		.byte	72
+ 344 013b 10       		.byte	16
+ 345 013c 4A       		.byte	74
+ 346 013d 30       		.byte	48
+ 347 013e 4C       		.byte	76
+ 348 013f 04       		.byte	4
+ 349 0140 4F       		.byte	79
+ 350 0141 04       		.byte	4
+ 351 0142 50       		.byte	80
+ 352 0143 04       		.byte	4
+ 353 0144 52       		.byte	82
+ 354 0145 04       		.byte	4
+ 355 0146 53       		.byte	83
+ 356 0147 08       		.byte	8
+ 357 0148 55       		.byte	85
+ 358 0149 14       		.byte	20
+ 359 014a 5C       		.byte	92
+ 360 014b 02       		.byte	2
+ 361 014c 67       		.byte	103
+ 362 014d 0A       		.byte	10
+ 363 014e C0       		.byte	-64
+ 364 014f 8F       		.byte	-113
+ 365 0150 C2       		.byte	-62
+ 366 0151 F0       		.byte	-16
+ 367 0152 C4       		.byte	-60
+ 368 0153 7E       		.byte	126
+ 369 0154 CA       		.byte	-54
+ 370 0155 AA       		.byte	-86
+ 371 0156 CC       		.byte	-52
+ 372 0157 53       		.byte	83
+ 373 0158 CE       		.byte	-50
+ 374 0159 A2       		.byte	-94
+ 375 015a D0       		.byte	-48
+ 376 015b C1       		.byte	-63
+ 377 015c D2       		.byte	-46
+ 378 015d 20       		.byte	32
+ 379 015e D6       		.byte	-42
+ 380 015f 80       		.byte	-128
+ 381 0160 D8       		.byte	-40
+ 382 0161 30       		.byte	48
+ 383 0162 E0       		.byte	-32
+ 384 0163 08       		.byte	8
+ 385 0164 E4       		.byte	-28
+ 386 0165 01       		.byte	1
+ 387 0166 EA       		.byte	-22
+ 388 0167 05       		.byte	5
+ 389 0168 E6       		.byte	-26
+ 390 0169 04       		.byte	4
+ 391 016a 01       		.byte	1
+ 392 016b 06       		.byte	6
+ 393 016c 03       		.byte	3
+ 394 016d 08       		.byte	8
+ 395 016e 05       		.byte	5
+ 396 016f 06       		.byte	6
+ 397 0170 07       		.byte	7
+ 398 0171 08       		.byte	8
+ 399 0172 0F       		.byte	15
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 8
+
+
+ 400 0173 01       		.byte	1
+ 401 0174 13       		.byte	19
+ 402 0175 10       		.byte	16
+ 403 0176 15       		.byte	21
+ 404 0177 06       		.byte	6
+ 405 0178 16       		.byte	22
+ 406 0179 01       		.byte	1
+ 407 017a 17       		.byte	23
+ 408 017b 18       		.byte	24
+ 409 017c 1D       		.byte	29
+ 410 017d 14       		.byte	20
+ 411 017e 1F       		.byte	31
+ 412 017f 08       		.byte	8
+ 413 0180 21       		.byte	33
+ 414 0181 01       		.byte	1
+ 415 0182 25       		.byte	37
+ 416 0183 01       		.byte	1
+ 417 0184 2A       		.byte	42
+ 418 0185 01       		.byte	1
+ 419 0186 2B       		.byte	43
+ 420 0187 0A       		.byte	10
+ 421 0188 2F       		.byte	47
+ 422 0189 01       		.byte	1
+ 423 018a 32       		.byte	50
+ 424 018b 01       		.byte	1
+ 425 018c 33       		.byte	51
+ 426 018d 01       		.byte	1
+ 427 018e 35       		.byte	53
+ 428 018f 1E       		.byte	30
+ 429 0190 39       		.byte	57
+ 430 0191 08       		.byte	8
+ 431 0192 3B       		.byte	59
+ 432 0193 20       		.byte	32
+ 433 0194 3E       		.byte	62
+ 434 0195 04       		.byte	4
+ 435 0196 58       		.byte	88
+ 436 0197 04       		.byte	4
+ 437 0198 59       		.byte	89
+ 438 0199 04       		.byte	4
+ 439 019a 5F       		.byte	95
+ 440 019b 01       		.byte	1
+ 441 019c 81       		.byte	-127
+ 442 019d 10       		.byte	16
+ 443 019e 84       		.byte	-124
+ 444 019f 13       		.byte	19
+ 445 01a0 85       		.byte	-123
+ 446 01a1 7C       		.byte	124
+ 447 01a2 86       		.byte	-122
+ 448 01a3 0C       		.byte	12
+ 449 01a4 87       		.byte	-121
+ 450 01a5 02       		.byte	2
+ 451 01a6 88       		.byte	-120
+ 452 01a7 03       		.byte	3
+ 453 01a8 89       		.byte	-119
+ 454 01a9 08       		.byte	8
+ 455 01aa 8E       		.byte	-114
+ 456 01ab 13       		.byte	19
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 9
+
+
+ 457 01ac 90       		.byte	-112
+ 458 01ad 0F       		.byte	15
+ 459 01ae 92       		.byte	-110
+ 460 01af 10       		.byte	16
+ 461 01b0 93       		.byte	-109
+ 462 01b1 04       		.byte	4
+ 463 01b2 94       		.byte	-108
+ 464 01b3 02       		.byte	2
+ 465 01b4 95       		.byte	-107
+ 466 01b5 18       		.byte	24
+ 467 01b6 98       		.byte	-104
+ 468 01b7 04       		.byte	4
+ 469 01b8 99       		.byte	-103
+ 470 01b9 67       		.byte	103
+ 471 01ba 9B       		.byte	-101
+ 472 01bb 18       		.byte	24
+ 473 01bc 9C       		.byte	-100
+ 474 01bd 1F       		.byte	31
+ 475 01be 9D       		.byte	-99
+ 476 01bf 5C       		.byte	92
+ 477 01c0 9F       		.byte	-97
+ 478 01c1 21       		.byte	33
+ 479 01c2 A0       		.byte	-96
+ 480 01c3 08       		.byte	8
+ 481 01c4 A1       		.byte	-95
+ 482 01c5 7F       		.byte	127
+ 483 01c6 A4       		.byte	-92
+ 484 01c7 0C       		.byte	12
+ 485 01c8 A6       		.byte	-90
+ 486 01c9 13       		.byte	19
+ 487 01ca A8       		.byte	-88
+ 488 01cb 0C       		.byte	12
+ 489 01cc A9       		.byte	-87
+ 490 01cd 04       		.byte	4
+ 491 01ce AC       		.byte	-84
+ 492 01cf 01       		.byte	1
+ 493 01d0 AF       		.byte	-81
+ 494 01d1 23       		.byte	35
+ 495 01d2 B0       		.byte	-80
+ 496 01d3 1C       		.byte	28
+ 497 01d4 B1       		.byte	-79
+ 498 01d5 38       		.byte	56
+ 499 01d6 B3       		.byte	-77
+ 500 01d7 40       		.byte	64
+ 501 01d8 B4       		.byte	-76
+ 502 01d9 0F       		.byte	15
+ 503 01da B5       		.byte	-75
+ 504 01db 1F       		.byte	31
+ 505 01dc BA       		.byte	-70
+ 506 01dd 22       		.byte	34
+ 507 01de BB       		.byte	-69
+ 508 01df 20       		.byte	32
+ 509 01e0 BF       		.byte	-65
+ 510 01e1 04       		.byte	4
+ 511 01e2 D6       		.byte	-42
+ 512 01e3 02       		.byte	2
+ 513 01e4 D7       		.byte	-41
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 10
+
+
+ 514 01e5 12       		.byte	18
+ 515 01e6 D8       		.byte	-40
+ 516 01e7 04       		.byte	4
+ 517 01e8 D9       		.byte	-39
+ 518 01e9 04       		.byte	4
+ 519 01ea DB       		.byte	-37
+ 520 01eb 04       		.byte	4
+ 521 01ec DF       		.byte	-33
+ 522 01ed 01       		.byte	1
+ 523 01ee 00       		.byte	0
+ 524 01ef 20       		.byte	32
+ 525 01f0 01       		.byte	1
+ 526 01f1 80       		.byte	-128
+ 527 01f2 03       		.byte	3
+ 528 01f3 10       		.byte	16
+ 529 01f4 08       		.byte	8
+ 530 01f5 48       		.byte	72
+ 531 01f6 09       		.byte	9
+ 532 01f7 20       		.byte	32
+ 533 01f8 0A       		.byte	10
+ 534 01f9 80       		.byte	-128
+ 535 01fa 0D       		.byte	13
+ 536 01fb 08       		.byte	8
+ 537 01fc 10       		.byte	16
+ 538 01fd 82       		.byte	-126
+ 539 01fe 12       		.byte	18
+ 540 01ff 20       		.byte	32
+ 541 0200 13       		.byte	19
+ 542 0201 10       		.byte	16
+ 543 0202 16       		.byte	22
+ 544 0203 04       		.byte	4
+ 545 0204 18       		.byte	24
+ 546 0205 80       		.byte	-128
+ 547 0206 19       		.byte	25
+ 548 0207 10       		.byte	16
+ 549 0208 1A       		.byte	26
+ 550 0209 80       		.byte	-128
+ 551 020a 1B       		.byte	27
+ 552 020b 22       		.byte	34
+ 553 020c 1F       		.byte	31
+ 554 020d 04       		.byte	4
+ 555 020e 20       		.byte	32
+ 556 020f 04       		.byte	4
+ 557 0210 21       		.byte	33
+ 558 0211 03       		.byte	3
+ 559 0212 22       		.byte	34
+ 560 0213 24       		.byte	36
+ 561 0214 25       		.byte	37
+ 562 0215 08       		.byte	8
+ 563 0216 27       		.byte	39
+ 564 0217 04       		.byte	4
+ 565 0218 28       		.byte	40
+ 566 0219 40       		.byte	64
+ 567 021a 29       		.byte	41
+ 568 021b 80       		.byte	-128
+ 569 021c 2A       		.byte	42
+ 570 021d 20       		.byte	32
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 11
+
+
+ 571 021e 2B       		.byte	43
+ 572 021f 80       		.byte	-128
+ 573 0220 2F       		.byte	47
+ 574 0221 AA       		.byte	-86
+ 575 0222 31       		.byte	49
+ 576 0223 14       		.byte	20
+ 577 0224 32       		.byte	50
+ 578 0225 42       		.byte	66
+ 579 0226 33       		.byte	51
+ 580 0227 10       		.byte	16
+ 581 0228 34       		.byte	52
+ 582 0229 01       		.byte	1
+ 583 022a 35       		.byte	53
+ 584 022b 40       		.byte	64
+ 585 022c 37       		.byte	55
+ 586 022d 04       		.byte	4
+ 587 022e 38       		.byte	56
+ 588 022f 24       		.byte	36
+ 589 0230 3A       		.byte	58
+ 590 0231 0A       		.byte	10
+ 591 0232 3D       		.byte	61
+ 592 0233 02       		.byte	2
+ 593 0234 3E       		.byte	62
+ 594 0235 40       		.byte	64
+ 595 0236 3F       		.byte	63
+ 596 0237 04       		.byte	4
+ 597 0238 5A       		.byte	90
+ 598 0239 08       		.byte	8
+ 599 023a 69       		.byte	105
+ 600 023b 54       		.byte	84
+ 601 023c 70       		.byte	112
+ 602 023d 90       		.byte	-112
+ 603 023e 71       		.byte	113
+ 604 023f 24       		.byte	36
+ 605 0240 72       		.byte	114
+ 606 0241 02       		.byte	2
+ 607 0242 73       		.byte	115
+ 608 0243 10       		.byte	16
+ 609 0244 78       		.byte	120
+ 610 0245 01       		.byte	1
+ 611 0246 7A       		.byte	122
+ 612 0247 80       		.byte	-128
+ 613 0248 8C       		.byte	-116
+ 614 0249 04       		.byte	4
+ 615 024a 8E       		.byte	-114
+ 616 024b 40       		.byte	64
+ 617 024c 90       		.byte	-112
+ 618 024d 08       		.byte	8
+ 619 024e 93       		.byte	-109
+ 620 024f 04       		.byte	4
+ 621 0250 95       		.byte	-107
+ 622 0251 02       		.byte	2
+ 623 0252 97       		.byte	-105
+ 624 0253 08       		.byte	8
+ 625 0254 99       		.byte	-103
+ 626 0255 40       		.byte	64
+ 627 0256 9B       		.byte	-101
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 12
+
+
+ 628 0257 01       		.byte	1
+ 629 0258 9C       		.byte	-100
+ 630 0259 02       		.byte	2
+ 631 025a 9F       		.byte	-97
+ 632 025b 04       		.byte	4
+ 633 025c A1       		.byte	-95
+ 634 025d 11       		.byte	17
+ 635 025e A3       		.byte	-93
+ 636 025f 08       		.byte	8
+ 637 0260 A6       		.byte	-90
+ 638 0261 80       		.byte	-128
+ 639 0262 A7       		.byte	-89
+ 640 0263 04       		.byte	4
+ 641 0264 B2       		.byte	-78
+ 642 0265 04       		.byte	4
+ 643 0266 C0       		.byte	-64
+ 644 0267 07       		.byte	7
+ 645 0268 C2       		.byte	-62
+ 646 0269 2F       		.byte	47
+ 647 026a C4       		.byte	-60
+ 648 026b 4F       		.byte	79
+ 649 026c CA       		.byte	-54
+ 650 026d FD       		.byte	-3
+ 651 026e CC       		.byte	-52
+ 652 026f DF       		.byte	-33
+ 653 0270 CE       		.byte	-50
+ 654 0271 D7       		.byte	-41
+ 655 0272 D6       		.byte	-42
+ 656 0273 02       		.byte	2
+ 657 0274 E6       		.byte	-26
+ 658 0275 04       		.byte	4
+ 659 0276 00       		.byte	0
+ 660 0277 02       		.byte	2
+ 661 0278 02       		.byte	2
+ 662 0279 09       		.byte	9
+ 663 027a 05       		.byte	5
+ 664 027b 07       		.byte	7
+ 665 027c 09       		.byte	9
+ 666 027d 07       		.byte	7
+ 667 027e 0C       		.byte	12
+ 668 027f 10       		.byte	16
+ 669 0280 0F       		.byte	15
+ 670 0281 18       		.byte	24
+ 671 0282 13       		.byte	19
+ 672 0283 18       		.byte	24
+ 673 0284 15       		.byte	21
+ 674 0285 19       		.byte	25
+ 675 0286 16       		.byte	22
+ 676 0287 04       		.byte	4
+ 677 0288 17       		.byte	23
+ 678 0289 06       		.byte	6
+ 679 028a 19       		.byte	25
+ 680 028b 18       		.byte	24
+ 681 028c 1D       		.byte	29
+ 682 028d 18       		.byte	24
+ 683 028e 21       		.byte	33
+ 684 028f 14       		.byte	20
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 13
+
+
+ 685 0290 23       		.byte	35
+ 686 0291 01       		.byte	1
+ 687 0292 24       		.byte	36
+ 688 0293 13       		.byte	19
+ 689 0294 27       		.byte	39
+ 690 0295 18       		.byte	24
+ 691 0296 28       		.byte	40
+ 692 0297 13       		.byte	19
+ 693 0298 29       		.byte	41
+ 694 0299 0A       		.byte	10
+ 695 029a 2B       		.byte	43
+ 696 029b 21       		.byte	33
+ 697 029c 2C       		.byte	44
+ 698 029d 01       		.byte	1
+ 699 029e 2E       		.byte	46
+ 700 029f 0A       		.byte	10
+ 701 02a0 30       		.byte	48
+ 702 02a1 03       		.byte	3
+ 703 02a2 31       		.byte	49
+ 704 02a3 20       		.byte	32
+ 705 02a4 33       		.byte	51
+ 706 02a5 07       		.byte	7
+ 707 02a6 34       		.byte	52
+ 708 02a7 0C       		.byte	12
+ 709 02a8 35       		.byte	53
+ 710 02a9 18       		.byte	24
+ 711 02aa 36       		.byte	54
+ 712 02ab 10       		.byte	16
+ 713 02ac 3E       		.byte	62
+ 714 02ad 10       		.byte	16
+ 715 02ae 58       		.byte	88
+ 716 02af 04       		.byte	4
+ 717 02b0 59       		.byte	89
+ 718 02b1 04       		.byte	4
+ 719 02b2 5F       		.byte	95
+ 720 02b3 01       		.byte	1
+ 721 02b4 86       		.byte	-122
+ 722 02b5 01       		.byte	1
+ 723 02b6 88       		.byte	-120
+ 724 02b7 01       		.byte	1
+ 725 02b8 89       		.byte	-119
+ 726 02b9 01       		.byte	1
+ 727 02ba 8E       		.byte	-114
+ 728 02bb 01       		.byte	1
+ 729 02bc 91       		.byte	-111
+ 730 02bd 02       		.byte	2
+ 731 02be 95       		.byte	-107
+ 732 02bf 02       		.byte	2
+ 733 02c0 9A       		.byte	-102
+ 734 02c1 01       		.byte	1
+ 735 02c2 9F       		.byte	-97
+ 736 02c3 02       		.byte	2
+ 737 02c4 A0       		.byte	-96
+ 738 02c5 01       		.byte	1
+ 739 02c6 A9       		.byte	-87
+ 740 02c7 04       		.byte	4
+ 741 02c8 B0       		.byte	-80
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 14
+
+
+ 742 02c9 01       		.byte	1
+ 743 02ca B5       		.byte	-75
+ 744 02cb 01       		.byte	1
+ 745 02cc B7       		.byte	-73
+ 746 02cd 06       		.byte	6
+ 747 02ce B9       		.byte	-71
+ 748 02cf 80       		.byte	-128
+ 749 02d0 BA       		.byte	-70
+ 750 02d1 80       		.byte	-128
+ 751 02d2 BE       		.byte	-66
+ 752 02d3 01       		.byte	1
+ 753 02d4 BF       		.byte	-65
+ 754 02d5 10       		.byte	16
+ 755 02d6 C0       		.byte	-64
+ 756 02d7 25       		.byte	37
+ 757 02d8 C1       		.byte	-63
+ 758 02d9 01       		.byte	1
+ 759 02da C2       		.byte	-62
+ 760 02db 04       		.byte	4
+ 761 02dc C4       		.byte	-60
+ 762 02dd 06       		.byte	6
+ 763 02de C5       		.byte	-59
+ 764 02df 0C       		.byte	12
+ 765 02e0 C7       		.byte	-57
+ 766 02e1 0E       		.byte	14
+ 767 02e2 C8       		.byte	-56
+ 768 02e3 11       		.byte	17
+ 769 02e4 C9       		.byte	-55
+ 770 02e5 FF       		.byte	-1
+ 771 02e6 CA       		.byte	-54
+ 772 02e7 FF       		.byte	-1
+ 773 02e8 CB       		.byte	-53
+ 774 02e9 FF       		.byte	-1
+ 775 02ea CC       		.byte	-52
+ 776 02eb 62       		.byte	98
+ 777 02ec CD       		.byte	-51
+ 778 02ed A0       		.byte	-96
+ 779 02ee CE       		.byte	-50
+ 780 02ef F0       		.byte	-16
+ 781 02f0 CF       		.byte	-49
+ 782 02f1 41       		.byte	65
+ 783 02f2 D0       		.byte	-48
+ 784 02f3 0C       		.byte	12
+ 785 02f4 D4       		.byte	-44
+ 786 02f5 01       		.byte	1
+ 787 02f6 D8       		.byte	-40
+ 788 02f7 04       		.byte	4
+ 789 02f8 D9       		.byte	-39
+ 790 02f9 04       		.byte	4
+ 791 02fa DA       		.byte	-38
+ 792 02fb 04       		.byte	4
+ 793 02fc DB       		.byte	-37
+ 794 02fd 04       		.byte	4
+ 795 02fe DF       		.byte	-33
+ 796 02ff 01       		.byte	1
+ 797 0300 E6       		.byte	-26
+ 798 0301 40       		.byte	64
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 15
+
+
+ 799 0302 E7       		.byte	-25
+ 800 0303 02       		.byte	2
+ 801 0304 E9       		.byte	-23
+ 802 0305 10       		.byte	16
+ 803 0306 EA       		.byte	-22
+ 804 0307 30       		.byte	48
+ 805 0308 EB       		.byte	-21
+ 806 0309 10       		.byte	16
+ 807 030a ED       		.byte	-19
+ 808 030b 10       		.byte	16
+ 809 030c EE       		.byte	-18
+ 810 030d 10       		.byte	16
+ 811 030e EF       		.byte	-17
+ 812 030f 12       		.byte	18
+ 813 0310 01       		.byte	1
+ 814 0311 42       		.byte	66
+ 815 0312 04       		.byte	4
+ 816 0313 08       		.byte	8
+ 817 0314 05       		.byte	5
+ 818 0315 40       		.byte	64
+ 819 0316 07       		.byte	7
+ 820 0317 04       		.byte	4
+ 821 0318 08       		.byte	8
+ 822 0319 20       		.byte	32
+ 823 031a 09       		.byte	9
+ 824 031b 08       		.byte	8
+ 825 031c 0B       		.byte	11
+ 826 031d 04       		.byte	4
+ 827 031e 0F       		.byte	15
+ 828 031f 04       		.byte	4
+ 829 0320 10       		.byte	16
+ 830 0321 02       		.byte	2
+ 831 0322 11       		.byte	17
+ 832 0323 14       		.byte	20
+ 833 0324 17       		.byte	23
+ 834 0325 01       		.byte	1
+ 835 0326 19       		.byte	25
+ 836 0327 82       		.byte	-126
+ 837 0328 1A       		.byte	26
+ 838 0329 02       		.byte	2
+ 839 032a 1B       		.byte	27
+ 840 032b 50       		.byte	80
+ 841 032c 1D       		.byte	29
+ 842 032d 80       		.byte	-128
+ 843 032e 1E       		.byte	30
+ 844 032f 40       		.byte	64
+ 845 0330 1F       		.byte	31
+ 846 0331 80       		.byte	-128
+ 847 0332 20       		.byte	32
+ 848 0333 20       		.byte	32
+ 849 0334 21       		.byte	33
+ 850 0335 08       		.byte	8
+ 851 0336 22       		.byte	34
+ 852 0337 22       		.byte	34
+ 853 0338 24       		.byte	36
+ 854 0339 04       		.byte	4
+ 855 033a 26       		.byte	38
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 16
+
+
+ 856 033b 80       		.byte	-128
+ 857 033c 29       		.byte	41
+ 858 033d 02       		.byte	2
+ 859 033e 2A       		.byte	42
+ 860 033f 28       		.byte	40
+ 861 0340 2F       		.byte	47
+ 862 0341 08       		.byte	8
+ 863 0342 31       		.byte	49
+ 864 0343 88       		.byte	-120
+ 865 0344 32       		.byte	50
+ 866 0345 01       		.byte	1
+ 867 0346 33       		.byte	51
+ 868 0347 10       		.byte	16
+ 869 0348 35       		.byte	53
+ 870 0349 40       		.byte	64
+ 871 034a 37       		.byte	55
+ 872 034b 05       		.byte	5
+ 873 034c 38       		.byte	56
+ 874 034d 80       		.byte	-128
+ 875 034e 39       		.byte	57
+ 876 034f 14       		.byte	20
+ 877 0350 3D       		.byte	61
+ 878 0351 20       		.byte	32
+ 879 0352 45       		.byte	69
+ 880 0353 82       		.byte	-126
+ 881 0354 47       		.byte	71
+ 882 0355 10       		.byte	16
+ 883 0356 4F       		.byte	79
+ 884 0357 A8       		.byte	-88
+ 885 0358 56       		.byte	86
+ 886 0359 04       		.byte	4
+ 887 035a 5C       		.byte	92
+ 888 035b 24       		.byte	36
+ 889 035c 5E       		.byte	94
+ 890 035d 40       		.byte	64
+ 891 035e 5F       		.byte	95
+ 892 035f 01       		.byte	1
+ 893 0360 80       		.byte	-128
+ 894 0361 08       		.byte	8
+ 895 0362 81       		.byte	-127
+ 896 0363 02       		.byte	2
+ 897 0364 84       		.byte	-124
+ 898 0365 02       		.byte	2
+ 899 0366 86       		.byte	-122
+ 900 0367 20       		.byte	32
+ 901 0368 88       		.byte	-120
+ 902 0369 02       		.byte	2
+ 903 036a 8A       		.byte	-118
+ 904 036b 20       		.byte	32
+ 905 036c 8D       		.byte	-115
+ 906 036d 10       		.byte	16
+ 907 036e 8F       		.byte	-113
+ 908 036f 01       		.byte	1
+ 909 0370 90       		.byte	-112
+ 910 0371 88       		.byte	-120
+ 911 0372 91       		.byte	-111
+ 912 0373 54       		.byte	84
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 17
+
+
+ 913 0374 93       		.byte	-109
+ 914 0375 04       		.byte	4
+ 915 0376 99       		.byte	-103
+ 916 0377 40       		.byte	64
+ 917 0378 9A       		.byte	-102
+ 918 0379 08       		.byte	8
+ 919 037a 9B       		.byte	-101
+ 920 037b 15       		.byte	21
+ 921 037c 9C       		.byte	-100
+ 922 037d 0A       		.byte	10
+ 923 037e 9D       		.byte	-99
+ 924 037f 80       		.byte	-128
+ 925 0380 9E       		.byte	-98
+ 926 0381 24       		.byte	36
+ 927 0382 A1       		.byte	-95
+ 928 0383 12       		.byte	18
+ 929 0384 A3       		.byte	-93
+ 930 0385 08       		.byte	8
+ 931 0386 A4       		.byte	-92
+ 932 0387 12       		.byte	18
+ 933 0388 A6       		.byte	-90
+ 934 0389 82       		.byte	-126
+ 935 038a A7       		.byte	-89
+ 936 038b 84       		.byte	-124
+ 937 038c C0       		.byte	-64
+ 938 038d E9       		.byte	-23
+ 939 038e C2       		.byte	-62
+ 940 038f 44       		.byte	68
+ 941 0390 C4       		.byte	-60
+ 942 0391 17       		.byte	23
+ 943 0392 CA       		.byte	-54
+ 944 0393 27       		.byte	39
+ 945 0394 CC       		.byte	-52
+ 946 0395 DF       		.byte	-33
+ 947 0396 CE       		.byte	-50
+ 948 0397 2E       		.byte	46
+ 949 0398 D0       		.byte	-48
+ 950 0399 B0       		.byte	-80
+ 951 039a D2       		.byte	-46
+ 952 039b 30       		.byte	48
+ 953 039c D6       		.byte	-42
+ 954 039d F0       		.byte	-16
+ 955 039e E0       		.byte	-32
+ 956 039f 08       		.byte	8
+ 957 03a0 E4       		.byte	-28
+ 958 03a1 01       		.byte	1
+ 959 03a2 EA       		.byte	-22
+ 960 03a3 05       		.byte	5
+ 961 03a4 3E       		.byte	62
+ 962 03a5 10       		.byte	16
+ 963 03a6 CE       		.byte	-50
+ 964 03a7 20       		.byte	32
+ 965 03a8 96       		.byte	-106
+ 966 03a9 10       		.byte	16
+ 967 03aa 80       		.byte	-128
+ 968 03ab 01       		.byte	1
+ 969 03ac 96       		.byte	-106
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 18
+
+
+ 970 03ad 10       		.byte	16
+ 971 03ae E6       		.byte	-26
+ 972 03af 20       		.byte	32
+ 973 03b0 12       		.byte	18
+ 974 03b1 20       		.byte	32
+ 975 03b2 16       		.byte	22
+ 976 03b3 40       		.byte	64
+ 977 03b4 70       		.byte	112
+ 978 03b5 01       		.byte	1
+ 979 03b6 77       		.byte	119
+ 980 03b7 10       		.byte	16
+ 981 03b8 82       		.byte	-126
+ 982 03b9 20       		.byte	32
+ 983 03ba 86       		.byte	-122
+ 984 03bb 40       		.byte	64
+ 985 03bc 90       		.byte	-112
+ 986 03bd 02       		.byte	2
+ 987 03be 9B       		.byte	-101
+ 988 03bf 10       		.byte	16
+ 989 03c0 AA       		.byte	-86
+ 990 03c1 10       		.byte	16
+ 991 03c2 AB       		.byte	-85
+ 992 03c3 10       		.byte	16
+ 993 03c4 C4       		.byte	-60
+ 994 03c5 30       		.byte	48
+ 995 03c6 DC       		.byte	-36
+ 996 03c7 80       		.byte	-128
+ 997 03c8 DE       		.byte	-34
+ 998 03c9 20       		.byte	32
+ 999 03ca E0       		.byte	-32
+ 1000 03cb 10       		.byte	16
+ 1001 03cc E4       		.byte	-28
+ 1002 03cd 80       		.byte	-128
+ 1003 03ce EA       		.byte	-22
+ 1004 03cf A0       		.byte	-96
+ 1005 03d0 12       		.byte	18
+ 1006 03d1 80       		.byte	-128
+ 1007 03d2 13       		.byte	19
+ 1008 03d3 20       		.byte	32
+ 1009 03d4 17       		.byte	23
+ 1010 03d5 08       		.byte	8
+ 1011 03d6 7B       		.byte	123
+ 1012 03d7 10       		.byte	16
+ 1013 03d8 7F       		.byte	127
+ 1014 03d9 40       		.byte	64
+ 1015 03da 82       		.byte	-126
+ 1016 03db 80       		.byte	-128
+ 1017 03dc A0       		.byte	-96
+ 1018 03dd 01       		.byte	1
+ 1019 03de B0       		.byte	-80
+ 1020 03df 01       		.byte	1
+ 1021 03e0 C4       		.byte	-60
+ 1022 03e1 0E       		.byte	14
+ 1023 03e2 DE       		.byte	-34
+ 1024 03e3 03       		.byte	3
+ 1025 03e4 E8       		.byte	-24
+ 1026 03e5 01       		.byte	1
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 19
+
+
+ 1027 03e6 10       		.byte	16
+ 1028 03e7 80       		.byte	-128
+ 1029 03e8 74       		.byte	116
+ 1030 03e9 01       		.byte	1
+ 1031 03ea 83       		.byte	-125
+ 1032 03eb 10       		.byte	16
+ 1033 03ec 87       		.byte	-121
+ 1034 03ed 40       		.byte	64
+ 1035 03ee 88       		.byte	-120
+ 1036 03ef 80       		.byte	-128
+ 1037 03f0 97       		.byte	-105
+ 1038 03f1 80       		.byte	-128
+ 1039 03f2 A0       		.byte	-96
+ 1040 03f3 01       		.byte	1
+ 1041 03f4 A7       		.byte	-89
+ 1042 03f5 10       		.byte	16
+ 1043 03f6 AB       		.byte	-85
+ 1044 03f7 28       		.byte	40
+ 1045 03f8 C4       		.byte	-60
+ 1046 03f9 08       		.byte	8
+ 1047 03fa DE       		.byte	-34
+ 1048 03fb 04       		.byte	4
+ 1049 03fc E6       		.byte	-26
+ 1050 03fd 01       		.byte	1
+ 1051 03fe 00       		.byte	0
+ 1052 03ff 01       		.byte	1
+ 1053 0400 0C       		.byte	12
+ 1054 0401 01       		.byte	1
+ 1055 0402 10       		.byte	16
+ 1056 0403 01       		.byte	1
+ 1057 0404 1C       		.byte	28
+ 1058 0405 01       		.byte	1
+ 1059 0406 03       		.byte	3
+ 1060 0407 C0       		.byte	-64
+ 1061 0408 82       		.byte	-126
+ 1062 0409 80       		.byte	-128
+ 1063 040a 00       		.byte	0
+ 1064 040b 00       		.byte	0
+ 1065 040c 40       		.byte	64
+ 1066 040d 00       		.byte	0
+ 1067 040e 00       		.byte	0
+ 1068 040f 00       		.byte	0
+ 1069 0410 80       		.byte	-128
+ 1070 0411 00       		.byte	0
+ 1071 0412 40       		.byte	64
+ 1072 0413 80       		.byte	-128
+ 1073 0414 83       		.byte	-125
+ 1074 0415 00       		.byte	0
+ 1075 0416 83       		.byte	-125
+ 1076 0417 00       		.byte	0
+ 1077 0418 00       		.byte	0
+ 1078 0419 00       		.byte	0
+ 1079 041a 00       		.byte	0
+ 1080 041b 00       		.byte	0
+ 1081 041c 00       		.byte	0
+ 1082 041d 0B       		.byte	11
+ 1083 041e 0B       		.byte	11
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 20
+
+
+ 1084 041f 00       		.byte	0
+ 1085 0420 00       		.byte	0
+ 1086 0421 00       		.byte	0
+ 1087 0422 00       		.byte	0
+ 1088 0423 00       		.byte	0
+ 1089              		.section	.cywolatch,"a",%progbits
+ 1090              		.align	2
+ 1091              		.type	cy_meta_wonvl, %object
+ 1092              		.size	cy_meta_wonvl, 4
+ 1093              	cy_meta_wonvl:
+ 1094 0000 BC       		.byte	-68
+ 1095 0001 90       		.byte	-112
+ 1096 0002 AC       		.byte	-84
+ 1097 0003 AF       		.byte	-81
+ 1098              		.section	.cycustnvl,"a",%progbits
+ 1099              		.align	2
+ 1100              		.type	cy_meta_custnvl, %object
+ 1101              		.size	cy_meta_custnvl, 4
+ 1102              	cy_meta_custnvl:
+ 1103 0000 00       		.byte	0
+ 1104 0001 00       		.byte	0
+ 1105 0002 40       		.byte	64
+ 1106 0003 05       		.byte	5
+ 1107              		.section	.cymeta,"a",%progbits
+ 1108              		.align	2
+ 1109              		.type	cy_metadata, %object
+ 1110              		.size	cy_metadata, 12
+ 1111              	cy_metadata:
+ 1112 0000 00       		.byte	0
+ 1113 0001 01       		.byte	1
+ 1114 0002 2E       		.byte	46
+ 1115 0003 16       		.byte	22
+ 1116 0004 10       		.byte	16
+ 1117 0005 69       		.byte	105
+ 1118 0006 00       		.byte	0
+ 1119 0007 01       		.byte	1
+ 1120 0008 00       		.byte	0
+ 1121 0009 00       		.byte	0
+ 1122 000a 00       		.byte	0
+ 1123 000b 00       		.byte	0
+ 1124              		.section	.cyflashprotect,"a",%progbits
+ 1125              		.align	2
+ 1126              		.type	cy_meta_flashprotect, %object
+ 1127              		.size	cy_meta_flashprotect, 256
+ 1128              	cy_meta_flashprotect:
+ 1129 0000 00000000 		.space	256
+ 1129      00000000 
+ 1129      00000000 
+ 1129      00000000 
+ 1129      00000000 
+ 1130              		.text
+ 1131              	.Letext0:
+ 1132              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1133              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1134              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1135              		.section	.debug_info,"",%progbits
+ 1136              	.Ldebug_info0:
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 21
+
+
+ 1137 0000 31010000 		.4byte	0x131
+ 1138 0004 0400     		.2byte	0x4
+ 1139 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1140 000a 04       		.byte	0x4
+ 1141 000b 01       		.uleb128 0x1
+ 1142 000c 24000000 		.4byte	.LASF17
+ 1143 0010 0C       		.byte	0xc
+ 1144 0011 C4010000 		.4byte	.LASF18
+ 1145 0015 3A010000 		.4byte	.LASF19
+ 1146 0019 00000000 		.4byte	.Ldebug_line0
+ 1147 001d 02       		.uleb128 0x2
+ 1148 001e 01       		.byte	0x1
+ 1149 001f 06       		.byte	0x6
+ 1150 0020 B8010000 		.4byte	.LASF0
+ 1151 0024 03       		.uleb128 0x3
+ 1152 0025 00000000 		.4byte	.LASF9
+ 1153 0029 01       		.byte	0x1
+ 1154 002a 1D       		.byte	0x1d
+ 1155 002b 2F000000 		.4byte	0x2f
+ 1156 002f 02       		.uleb128 0x2
+ 1157 0030 01       		.byte	0x1
+ 1158 0031 08       		.byte	0x8
+ 1159 0032 16000000 		.4byte	.LASF1
+ 1160 0036 02       		.uleb128 0x2
+ 1161 0037 02       		.byte	0x2
+ 1162 0038 05       		.byte	0x5
+ 1163 0039 A5010000 		.4byte	.LASF2
+ 1164 003d 02       		.uleb128 0x2
+ 1165 003e 02       		.byte	0x2
+ 1166 003f 07       		.byte	0x7
+ 1167 0040 C4000000 		.4byte	.LASF3
+ 1168 0044 02       		.uleb128 0x2
+ 1169 0045 04       		.byte	0x4
+ 1170 0046 05       		.byte	0x5
+ 1171 0047 AF010000 		.4byte	.LASF4
+ 1172 004b 02       		.uleb128 0x2
+ 1173 004c 04       		.byte	0x4
+ 1174 004d 07       		.byte	0x7
+ 1175 004e B2000000 		.4byte	.LASF5
+ 1176 0052 02       		.uleb128 0x2
+ 1177 0053 08       		.byte	0x8
+ 1178 0054 05       		.byte	0x5
+ 1179 0055 89010000 		.4byte	.LASF6
+ 1180 0059 02       		.uleb128 0x2
+ 1181 005a 08       		.byte	0x8
+ 1182 005b 07       		.byte	0x7
+ 1183 005c 06010000 		.4byte	.LASF7
+ 1184 0060 04       		.uleb128 0x4
+ 1185 0061 04       		.byte	0x4
+ 1186 0062 05       		.byte	0x5
+ 1187 0063 696E7400 		.ascii	"int\000"
+ 1188 0067 02       		.uleb128 0x2
+ 1189 0068 04       		.byte	0x4
+ 1190 0069 07       		.byte	0x7
+ 1191 006a F9000000 		.4byte	.LASF8
+ 1192 006e 03       		.uleb128 0x3
+ 1193 006f 1D010000 		.4byte	.LASF10
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 22
+
+
+ 1194 0073 02       		.byte	0x2
+ 1195 0074 18       		.byte	0x18
+ 1196 0075 24000000 		.4byte	0x24
+ 1197 0079 05       		.uleb128 0x5
+ 1198 007a 91000000 		.4byte	0x91
+ 1199 007e 8A000000 		.4byte	0x8a
+ 1200 0082 06       		.uleb128 0x6
+ 1201 0083 8A000000 		.4byte	0x8a
+ 1202 0087 2304     		.2byte	0x423
+ 1203 0089 00       		.byte	0
+ 1204 008a 02       		.uleb128 0x2
+ 1205 008b 04       		.byte	0x4
+ 1206 008c 07       		.byte	0x7
+ 1207 008d 80010000 		.4byte	.LASF11
+ 1208 0091 07       		.uleb128 0x7
+ 1209 0092 6E000000 		.4byte	0x6e
+ 1210 0096 08       		.uleb128 0x8
+ 1211 0097 E7000000 		.4byte	.LASF12
+ 1212 009b 03       		.byte	0x3
+ 1213 009c 1F       		.byte	0x1f
+ 1214 009d A7000000 		.4byte	0xa7
+ 1215 00a1 05       		.uleb128 0x5
+ 1216 00a2 03       		.byte	0x3
+ 1217 00a3 00000000 		.4byte	cy_meta_configecc
+ 1218 00a7 07       		.uleb128 0x7
+ 1219 00a8 79000000 		.4byte	0x79
+ 1220 00ac 05       		.uleb128 0x5
+ 1221 00ad 91000000 		.4byte	0x91
+ 1222 00b1 BC000000 		.4byte	0xbc
+ 1223 00b5 09       		.uleb128 0x9
+ 1224 00b6 8A000000 		.4byte	0x8a
+ 1225 00ba 03       		.byte	0x3
+ 1226 00bb 00       		.byte	0
+ 1227 00bc 08       		.uleb128 0x8
+ 1228 00bd D7000000 		.4byte	.LASF13
+ 1229 00c1 03       		.byte	0x3
+ 1230 00c2 B1       		.byte	0xb1
+ 1231 00c3 CD000000 		.4byte	0xcd
+ 1232 00c7 05       		.uleb128 0x5
+ 1233 00c8 03       		.byte	0x3
+ 1234 00c9 00000000 		.4byte	cy_meta_custnvl
+ 1235 00cd 07       		.uleb128 0x7
+ 1236 00ce AC000000 		.4byte	0xac
+ 1237 00d2 08       		.uleb128 0x8
+ 1238 00d3 97010000 		.4byte	.LASF14
+ 1239 00d7 03       		.byte	0x3
+ 1240 00d8 BF       		.byte	0xbf
+ 1241 00d9 E3000000 		.4byte	0xe3
+ 1242 00dd 05       		.uleb128 0x5
+ 1243 00de 03       		.byte	0x3
+ 1244 00df 00000000 		.4byte	cy_meta_wonvl
+ 1245 00e3 07       		.uleb128 0x7
+ 1246 00e4 AC000000 		.4byte	0xac
+ 1247 00e8 05       		.uleb128 0x5
+ 1248 00e9 91000000 		.4byte	0x91
+ 1249 00ed F8000000 		.4byte	0xf8
+ 1250 00f1 09       		.uleb128 0x9
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 23
+
+
+ 1251 00f2 8A000000 		.4byte	0x8a
+ 1252 00f6 FF       		.byte	0xff
+ 1253 00f7 00       		.byte	0
+ 1254 00f8 08       		.uleb128 0x8
+ 1255 00f9 25010000 		.4byte	.LASF15
+ 1256 00fd 03       		.byte	0x3
+ 1257 00fe CD       		.byte	0xcd
+ 1258 00ff 09010000 		.4byte	0x109
+ 1259 0103 05       		.uleb128 0x5
+ 1260 0104 03       		.byte	0x3
+ 1261 0105 00000000 		.4byte	cy_meta_flashprotect
+ 1262 0109 07       		.uleb128 0x7
+ 1263 010a E8000000 		.4byte	0xe8
+ 1264 010e 05       		.uleb128 0x5
+ 1265 010f 91000000 		.4byte	0x91
+ 1266 0113 1E010000 		.4byte	0x11e
+ 1267 0117 09       		.uleb128 0x9
+ 1268 0118 8A000000 		.4byte	0x8a
+ 1269 011c 0B       		.byte	0xb
+ 1270 011d 00       		.byte	0
+ 1271 011e 08       		.uleb128 0x8
+ 1272 011f 0A000000 		.4byte	.LASF16
+ 1273 0123 03       		.byte	0x3
+ 1274 0124 FA       		.byte	0xfa
+ 1275 0125 2F010000 		.4byte	0x12f
+ 1276 0129 05       		.uleb128 0x5
+ 1277 012a 03       		.byte	0x3
+ 1278 012b 00000000 		.4byte	cy_metadata
+ 1279 012f 07       		.uleb128 0x7
+ 1280 0130 0E010000 		.4byte	0x10e
+ 1281 0134 00       		.byte	0
+ 1282              		.section	.debug_abbrev,"",%progbits
+ 1283              	.Ldebug_abbrev0:
+ 1284 0000 01       		.uleb128 0x1
+ 1285 0001 11       		.uleb128 0x11
+ 1286 0002 01       		.byte	0x1
+ 1287 0003 25       		.uleb128 0x25
+ 1288 0004 0E       		.uleb128 0xe
+ 1289 0005 13       		.uleb128 0x13
+ 1290 0006 0B       		.uleb128 0xb
+ 1291 0007 03       		.uleb128 0x3
+ 1292 0008 0E       		.uleb128 0xe
+ 1293 0009 1B       		.uleb128 0x1b
+ 1294 000a 0E       		.uleb128 0xe
+ 1295 000b 10       		.uleb128 0x10
+ 1296 000c 17       		.uleb128 0x17
+ 1297 000d 00       		.byte	0
+ 1298 000e 00       		.byte	0
+ 1299 000f 02       		.uleb128 0x2
+ 1300 0010 24       		.uleb128 0x24
+ 1301 0011 00       		.byte	0
+ 1302 0012 0B       		.uleb128 0xb
+ 1303 0013 0B       		.uleb128 0xb
+ 1304 0014 3E       		.uleb128 0x3e
+ 1305 0015 0B       		.uleb128 0xb
+ 1306 0016 03       		.uleb128 0x3
+ 1307 0017 0E       		.uleb128 0xe
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 24
+
+
+ 1308 0018 00       		.byte	0
+ 1309 0019 00       		.byte	0
+ 1310 001a 03       		.uleb128 0x3
+ 1311 001b 16       		.uleb128 0x16
+ 1312 001c 00       		.byte	0
+ 1313 001d 03       		.uleb128 0x3
+ 1314 001e 0E       		.uleb128 0xe
+ 1315 001f 3A       		.uleb128 0x3a
+ 1316 0020 0B       		.uleb128 0xb
+ 1317 0021 3B       		.uleb128 0x3b
+ 1318 0022 0B       		.uleb128 0xb
+ 1319 0023 49       		.uleb128 0x49
+ 1320 0024 13       		.uleb128 0x13
+ 1321 0025 00       		.byte	0
+ 1322 0026 00       		.byte	0
+ 1323 0027 04       		.uleb128 0x4
+ 1324 0028 24       		.uleb128 0x24
+ 1325 0029 00       		.byte	0
+ 1326 002a 0B       		.uleb128 0xb
+ 1327 002b 0B       		.uleb128 0xb
+ 1328 002c 3E       		.uleb128 0x3e
+ 1329 002d 0B       		.uleb128 0xb
+ 1330 002e 03       		.uleb128 0x3
+ 1331 002f 08       		.uleb128 0x8
+ 1332 0030 00       		.byte	0
+ 1333 0031 00       		.byte	0
+ 1334 0032 05       		.uleb128 0x5
+ 1335 0033 01       		.uleb128 0x1
+ 1336 0034 01       		.byte	0x1
+ 1337 0035 49       		.uleb128 0x49
+ 1338 0036 13       		.uleb128 0x13
+ 1339 0037 01       		.uleb128 0x1
+ 1340 0038 13       		.uleb128 0x13
+ 1341 0039 00       		.byte	0
+ 1342 003a 00       		.byte	0
+ 1343 003b 06       		.uleb128 0x6
+ 1344 003c 21       		.uleb128 0x21
+ 1345 003d 00       		.byte	0
+ 1346 003e 49       		.uleb128 0x49
+ 1347 003f 13       		.uleb128 0x13
+ 1348 0040 2F       		.uleb128 0x2f
+ 1349 0041 05       		.uleb128 0x5
+ 1350 0042 00       		.byte	0
+ 1351 0043 00       		.byte	0
+ 1352 0044 07       		.uleb128 0x7
+ 1353 0045 26       		.uleb128 0x26
+ 1354 0046 00       		.byte	0
+ 1355 0047 49       		.uleb128 0x49
+ 1356 0048 13       		.uleb128 0x13
+ 1357 0049 00       		.byte	0
+ 1358 004a 00       		.byte	0
+ 1359 004b 08       		.uleb128 0x8
+ 1360 004c 34       		.uleb128 0x34
+ 1361 004d 00       		.byte	0
+ 1362 004e 03       		.uleb128 0x3
+ 1363 004f 0E       		.uleb128 0xe
+ 1364 0050 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 25
+
+
+ 1365 0051 0B       		.uleb128 0xb
+ 1366 0052 3B       		.uleb128 0x3b
+ 1367 0053 0B       		.uleb128 0xb
+ 1368 0054 49       		.uleb128 0x49
+ 1369 0055 13       		.uleb128 0x13
+ 1370 0056 3F       		.uleb128 0x3f
+ 1371 0057 19       		.uleb128 0x19
+ 1372 0058 02       		.uleb128 0x2
+ 1373 0059 18       		.uleb128 0x18
+ 1374 005a 00       		.byte	0
+ 1375 005b 00       		.byte	0
+ 1376 005c 09       		.uleb128 0x9
+ 1377 005d 21       		.uleb128 0x21
+ 1378 005e 00       		.byte	0
+ 1379 005f 49       		.uleb128 0x49
+ 1380 0060 13       		.uleb128 0x13
+ 1381 0061 2F       		.uleb128 0x2f
+ 1382 0062 0B       		.uleb128 0xb
+ 1383 0063 00       		.byte	0
+ 1384 0064 00       		.byte	0
+ 1385 0065 00       		.byte	0
+ 1386              		.section	.debug_aranges,"",%progbits
+ 1387 0000 14000000 		.4byte	0x14
+ 1388 0004 0200     		.2byte	0x2
+ 1389 0006 00000000 		.4byte	.Ldebug_info0
+ 1390 000a 04       		.byte	0x4
+ 1391 000b 00       		.byte	0
+ 1392 000c 0000     		.2byte	0
+ 1393 000e 0000     		.2byte	0
+ 1394 0010 00000000 		.4byte	0
+ 1395 0014 00000000 		.4byte	0
+ 1396              		.section	.debug_line,"",%progbits
+ 1397              	.Ldebug_line0:
+ 1398 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 1398      02003701 
+ 1398      00000201 
+ 1398      FB0E0D00 
+ 1398      01010101 
+ 1399              	.LASF9:
+ 1400 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1400      6E74385F 
+ 1400      7400
+ 1401              	.LASF16:
+ 1402 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 1402      65746164 
+ 1402      61746100 
+ 1403              	.LASF1:
+ 1404 0016 756E7369 		.ascii	"unsigned char\000"
+ 1404      676E6564 
+ 1404      20636861 
+ 1404      7200
+ 1405              	.LASF17:
+ 1406 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1406      43313120 
+ 1406      352E342E 
+ 1406      31203230 
+ 1406      31363036 
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 26
+
+
+ 1407 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1407      20726576 
+ 1407      6973696F 
+ 1407      6E203233 
+ 1407      37373135 
+ 1408 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1408      66756E63 
+ 1408      74696F6E 
+ 1408      2D736563 
+ 1408      74696F6E 
+ 1409              	.LASF5:
+ 1410 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1410      20756E73 
+ 1410      69676E65 
+ 1410      6420696E 
+ 1410      7400
+ 1411              	.LASF3:
+ 1412 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 1412      7420756E 
+ 1412      7369676E 
+ 1412      65642069 
+ 1412      6E7400
+ 1413              	.LASF13:
+ 1414 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1414      6574615F 
+ 1414      63757374 
+ 1414      6E766C00 
+ 1415              	.LASF12:
+ 1416 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1416      6574615F 
+ 1416      636F6E66 
+ 1416      69676563 
+ 1416      6300
+ 1417              	.LASF8:
+ 1418 00f9 756E7369 		.ascii	"unsigned int\000"
+ 1418      676E6564 
+ 1418      20696E74 
+ 1418      00
+ 1419              	.LASF7:
+ 1420 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1420      206C6F6E 
+ 1420      6720756E 
+ 1420      7369676E 
+ 1420      65642069 
+ 1421              	.LASF10:
+ 1422 011d 75696E74 		.ascii	"uint8_t\000"
+ 1422      385F7400 
+ 1423              	.LASF15:
+ 1424 0125 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1424      6574615F 
+ 1424      666C6173 
+ 1424      6870726F 
+ 1424      74656374 
+ 1425              	.LASF19:
+ 1426 013a 433A5C55 		.ascii	"C:\\Users\\Frederick\\Documents\\PSoC Creator\\I2C "
+ 1426      73657273 
+ 1426      5C467265 
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\ccvkCQs6.s 			page 27
+
+
+ 1426      64657269 
+ 1426      636B5C44 
+ 1427 0168 5250492D 		.ascii	"RPI-PSoC\\Design01.cydsn\000"
+ 1427      50536F43 
+ 1427      5C446573 
+ 1427      69676E30 
+ 1427      312E6379 
+ 1428              	.LASF11:
+ 1429 0180 73697A65 		.ascii	"sizetype\000"
+ 1429      74797065 
+ 1429      00
+ 1430              	.LASF6:
+ 1431 0189 6C6F6E67 		.ascii	"long long int\000"
+ 1431      206C6F6E 
+ 1431      6720696E 
+ 1431      7400
+ 1432              	.LASF14:
+ 1433 0197 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1433      6574615F 
+ 1433      776F6E76 
+ 1433      6C00
+ 1434              	.LASF2:
+ 1435 01a5 73686F72 		.ascii	"short int\000"
+ 1435      7420696E 
+ 1435      7400
+ 1436              	.LASF4:
+ 1437 01af 6C6F6E67 		.ascii	"long int\000"
+ 1437      20696E74 
+ 1437      00
+ 1438              	.LASF0:
+ 1439 01b8 7369676E 		.ascii	"signed char\000"
+ 1439      65642063 
+ 1439      68617200 
+ 1440              	.LASF18:
+ 1441 01c4 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1441      72617465 
+ 1441      645F536F 
+ 1441      75726365 
+ 1441      5C50536F 
+ 1442              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

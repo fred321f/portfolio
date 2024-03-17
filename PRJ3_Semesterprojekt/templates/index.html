@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Webserver test</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="container">
+
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col text-center">
+            <h1>I2C</h1>
+          </div>
+          <div class="col"></div>
+        </div>
+
+
+        <div class="row">
+          <div class="col"></div>
+
+          <div class="col-sm">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="card-title">
+                  <h4>Toggle system</h4>
+                </div>
+
+                <button class="btn btn-success" id="onBtn">System On</button>
+                <button class="btn btn-danger" id="offBtn">System Off</button>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+          </div>
+
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title text-center">
+                <h4>Set threshold</h4>
+              </div>
+              <div class="row text-center">
+                <div class="col"></div>
+                <div class="col-m">
+
+                  <button class="btn btn-danger" id="thresh1">Level 1</button>
+                  <button class="btn btn-warning" id="thresh2">Level 2</button>
+                  <button class="btn btn-success" id="thresh3">Level 3</button>
+                
+                </div>
+                <div class="col"></div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <br>
+
+      <div class="row">
+
+        <div class="col"></div>
+
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title text-center">
+                <h4>Set timer</h4>
+              </div>
+              
+              <form action="#" class="text-center">
+                <input type="number" name="timer" id="userTime">
+                <p class="lead" id="timer">0</p>
+                <button type="button" class="btn btn-success" onclick="startTime()">Start</button>
+                <button type="button" class="btn btn-danger" onclick="stopTime()">Stop</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col"></div>
+      
+      </div>
+    </div>
+
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+  <!-- Timer Code -->
+  <script>
+    // Variables
+    var fetchTimer = document.getElementById('timer');
+    var timeRemaining = 0; // 
+
+    // Function to start the timer
+    function startTime() {
+      timeRemaining = document.getElementById('userTime').value; // Get user input from form
+      interval = setInterval(function () { // Set interval to 1 second
+        fetchTimer.innerHTML = timeRemaining;
+        timeRemaining--;
+
+        if (timeRemaining < 0) { // If timer reaches 0
+          console.log('Timer er nået 0. System slukkes...'); // Log to console
+          clearInterval(interval); // Stop the timer
+          sendData('/sysStatus', 0); // Turn off system when timer reaches 0
+        }
+      }, 1000);
+    }
+
+    // Function to stop the countdown timer
+    function stopTime() {
+      console.log('Systemet er stoppet manuelt...'); // Log to console
+      timeRemaining = 0; // Reset timeRemaining to 0
+      fetchTimer.innerHTML = '0'; // Reset timer display to 0
+      clearInterval(interval); // Stop the timer
+    }
+
+    // Check for button clicks on start and stop buttons
+    document.getElementById('startBtn').addEventListener('click', startTime);
+    document.getElementById('stopBtn').addEventListener('click', stopTime);
+  </script>
+
+  <!-- I2C Code -->
+  <script>
+
+    function sendData(endPoint, dataToSend) {
+      fetch(endPoint + '/' + dataToSend, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ dataToSend })
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Data sent to backend: ', data);
+        })
+    }
+
+    document.getElementById('onBtn').addEventListener('click', () => {
+      sendData('/sysStatus', 1);
+    });
+
+    document.getElementById('offBtn').addEventListener('click', () => {
+      sendData('/sysStatus', 0);
+    });
+
+    document.getElementById('thresh1').addEventListener('click', () => {
+      sendData('/sysStatus', 2);
+    });
+
+    document.getElementById('thresh2').addEventListener('click', () => {
+      sendData('/sysStatus', 3);
+    });
+
+    document.getElementById('thresh3').addEventListener('click', () => {
+      sendData('/sysStatus', 4);
+    });
+  </script>
+</body>
+
+</html>

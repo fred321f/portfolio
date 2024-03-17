@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|323742d8-f3a6-43a9-b8cc-e83aa43cb9b5
+C:\Users\Frederick\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|7f0984cd-2fe3-4834-b1f1-73eb136b3eba
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8d5e0a1b-ab86-4265-982a-144d2d29ded8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|522d67ed-fb47-408a-9aa3-2faaa7207b96
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4cac9a1c-933f-4360-9af4-00a5a4d65f5e
+C:\Users\Frederick\Documents\PSoC Creator\I2C RPI-PSoC\Design01.cydsn\Design01.cyprj|6d1d3c67-9408-4904-ab55-d4b7d7ba215f

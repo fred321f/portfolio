@@ -1,0 +1,1334 @@
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "cytypes.h"
+  14:main.c        **** 
+  15:main.c        **** #define SLAVE_ADRESS 0x08
+  16:main.c        **** #define READ_BUF_SIZE 64
+  17:main.c        **** #define WRITE_BUF_SIZE 64
+  18:main.c        **** 
+  19:main.c        **** uint8 readBuffer[READ_BUF_SIZE];
+  20:main.c        **** uint8 writeBuffer[READ_BUF_SIZE];
+  21:main.c        **** 
+  22:main.c        **** int main(void)
+  23:main.c        **** {
+  28              		.loc 1 23 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 56
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 30B5     		push	{r4, r5, lr}
+  33              		.cfi_def_cfa_offset 12
+  34              		.cfi_offset 4, -12
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 2
+
+
+  35              		.cfi_offset 5, -8
+  36              		.cfi_offset 14, -4
+  37 0002 8FB0     		sub	sp, sp, #60
+  38              		.cfi_def_cfa_offset 72
+  24:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  39              		.loc 1 24 0
+  40              		.syntax unified
+  41              	@ 24 "main.c" 1
+  42 0004 62B6     		CPSIE   i
+  43              	@ 0 "" 2
+  25:main.c        ****     
+  26:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  27:main.c        ****     I2C_Start();
+  44              		.loc 1 27 0
+  45              		.thumb
+  46              		.syntax unified
+  47 0006 FFF7FEFF 		bl	I2C_Start
+  48              	.LVL0:
+  28:main.c        ****     UART_Start();
+  49              		.loc 1 28 0
+  50 000a FFF7FEFF 		bl	UART_Start
+  51              	.LVL1:
+  29:main.c        ****     
+  30:main.c        ****     I2C_SlaveInitReadBuf((uint8 *) readBuffer, READ_BUF_SIZE);
+  52              		.loc 1 30 0
+  53 000e 4021     		movs	r1, #64
+  54 0010 2648     		ldr	r0, .L13
+  55 0012 FFF7FEFF 		bl	I2C_SlaveInitReadBuf
+  56              	.LVL2:
+  31:main.c        ****     I2C_SlaveInitWriteBuf((uint8 *) writeBuffer, WRITE_BUF_SIZE);
+  57              		.loc 1 31 0
+  58 0016 4021     		movs	r1, #64
+  59 0018 2548     		ldr	r0, .L13+4
+  60 001a FFF7FEFF 		bl	I2C_SlaveInitWriteBuf
+  61              	.LVL3:
+  62              	.LBB2:
+  32:main.c        ****     
+  33:main.c        ****     /* Initializer readBuffer og writeBuffer */
+  34:main.c        ****     for (int i = 0; i < READ_BUF_SIZE; i++) {
+  63              		.loc 1 34 0
+  64 001e 0023     		movs	r3, #0
+  65 0020 04E0     		b	.L2
+  66              	.LVL4:
+  67              	.L3:
+  35:main.c        ****         readBuffer[i] = writeBuffer[i];
+  68              		.loc 1 35 0 discriminator 3
+  69 0022 234A     		ldr	r2, .L13+4
+  70 0024 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
+  71 0026 214A     		ldr	r2, .L13
+  72 0028 D154     		strb	r1, [r2, r3]
+  34:main.c        ****         readBuffer[i] = writeBuffer[i];
+  73              		.loc 1 34 0 discriminator 3
+  74 002a 0133     		adds	r3, r3, #1
+  75              	.LVL5:
+  76              	.L2:
+  34:main.c        ****         readBuffer[i] = writeBuffer[i];
+  77              		.loc 1 34 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 3
+
+
+  78 002c 3F2B     		cmp	r3, #63
+  79 002e F8DD     		ble	.L3
+  80 0030 06E0     		b	.L4
+  81              	.LVL6:
+  82              	.L5:
+  83              	.LBE2:
+  84              	.LBB3:
+  36:main.c        ****     }
+  37:main.c        ****     
+  38:main.c        ****     for(;;)
+  39:main.c        ****     {
+  40:main.c        ****         /* Place your application code here. */
+  41:main.c        ****         while (0 == (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPT)){ /* Vent på besked fra master */
+  42:main.c        ****             UART_PutString("Venter på besked fra master\n\n");
+  85              		.loc 1 42 0 is_stmt 1
+  86 0032 2048     		ldr	r0, .L13+8
+  87 0034 FFF7FEFF 		bl	UART_PutString
+  88              	.LVL7:
+  43:main.c        ****             CyDelay(500);
+  89              		.loc 1 43 0
+  90 0038 4FF4FA70 		mov	r0, #500
+  91 003c FFF7FEFF 		bl	CyDelay
+  92              	.LVL8:
+  93              	.L4:
+  41:main.c        ****             UART_PutString("Venter på besked fra master\n\n");
+  94              		.loc 1 41 0
+  95 0040 FFF7FEFF 		bl	I2C_SlaveStatus
+  96              	.LVL9:
+  97 0044 10F0100F 		tst	r0, #16
+  98 0048 F3D0     		beq	.L5
+  44:main.c        ****         };
+  45:main.c        ****         
+  46:main.c        ****         uint8 writeBufferSize = I2C_SlaveGetWriteBufSize();
+  99              		.loc 1 46 0
+ 100 004a FFF7FEFF 		bl	I2C_SlaveGetWriteBufSize
+ 101              	.LVL10:
+ 102 004e 0546     		mov	r5, r0
+ 103              	.LVL11:
+ 104              	.LBB4:
+  47:main.c        ****         for (int i = 0; i < writeBufferSize; i++) {
+ 105              		.loc 1 47 0
+ 106 0050 0024     		movs	r4, #0
+ 107 0052 0AE0     		b	.L6
+ 108              	.LVL12:
+ 109              	.L7:
+ 110              	.LBB5:
+  48:main.c        ****             /* Behandling af writeBuffer[i] */
+  49:main.c        ****             char msg[50];
+  50:main.c        ****             sprintf(msg, "Data[%d]: %d\n", i, writeBuffer[i]); 
+ 111              		.loc 1 50 0 discriminator 3
+ 112 0054 164B     		ldr	r3, .L13+4
+ 113 0056 1B5D     		ldrb	r3, [r3, r4]	@ zero_extendqisi2
+ 114 0058 2246     		mov	r2, r4
+ 115 005a 1749     		ldr	r1, .L13+12
+ 116 005c 01A8     		add	r0, sp, #4
+ 117 005e FFF7FEFF 		bl	sprintf
+ 118              	.LVL13:
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 4
+
+
+  51:main.c        ****             UART_PutString(msg);
+ 119              		.loc 1 51 0 discriminator 3
+ 120 0062 01A8     		add	r0, sp, #4
+ 121 0064 FFF7FEFF 		bl	UART_PutString
+ 122              	.LVL14:
+ 123              	.LBE5:
+  47:main.c        ****         for (int i = 0; i < writeBufferSize; i++) {
+ 124              		.loc 1 47 0 discriminator 3
+ 125 0068 0134     		adds	r4, r4, #1
+ 126              	.LVL15:
+ 127              	.L6:
+  47:main.c        ****         for (int i = 0; i < writeBufferSize; i++) {
+ 128              		.loc 1 47 0 is_stmt 0 discriminator 1
+ 129 006a AC42     		cmp	r4, r5
+ 130 006c F2DB     		blt	.L7
+ 131              	.LBE4:
+  52:main.c        ****         }
+  53:main.c        ****         
+  54:main.c        ****         I2C_SlaveClearWriteBuf();
+ 132              		.loc 1 54 0 is_stmt 1
+ 133 006e FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 134              	.LVL16:
+  55:main.c        ****         I2C_SlaveClearWriteStatus();
+ 135              		.loc 1 55 0
+ 136 0072 FFF7FEFF 		bl	I2C_SlaveClearWriteStatus
+ 137              	.LVL17:
+  56:main.c        ****         
+  57:main.c        ****         while (0 == (I2C_SlaveStatus() & I2C_SSTAT_RD_CMPT)){ /* Vent på at master anmoder om data
+ 138              		.loc 1 57 0
+ 139 0076 06E0     		b	.L8
+ 140              	.L9:
+  58:main.c        ****             UART_PutString("Venter på anmodning fra master\n\n");
+ 141              		.loc 1 58 0
+ 142 0078 1048     		ldr	r0, .L13+16
+ 143 007a FFF7FEFF 		bl	UART_PutString
+ 144              	.LVL18:
+  59:main.c        ****             CyDelay(500);
+ 145              		.loc 1 59 0
+ 146 007e 4FF4FA70 		mov	r0, #500
+ 147 0082 FFF7FEFF 		bl	CyDelay
+ 148              	.LVL19:
+ 149              	.L8:
+  57:main.c        ****             UART_PutString("Venter på anmodning fra master\n\n");
+ 150              		.loc 1 57 0
+ 151 0086 FFF7FEFF 		bl	I2C_SlaveStatus
+ 152              	.LVL20:
+ 153 008a 10F0010F 		tst	r0, #1
+ 154 008e F3D0     		beq	.L9
+  60:main.c        ****         }
+  61:main.c        ****         
+  62:main.c        ****         
+  63:main.c        ****         if (I2C_SlaveStatus() & I2C_SSTAT_WR_CMPT) {
+ 155              		.loc 1 63 0
+ 156 0090 FFF7FEFF 		bl	I2C_SlaveStatus
+ 157              	.LVL21:
+ 158 0094 10F0100F 		tst	r0, #16
+ 159 0098 02D0     		beq	.L10
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 5
+
+
+  64:main.c        ****             UART_PutString("Data sendt");
+ 160              		.loc 1 64 0
+ 161 009a 0948     		ldr	r0, .L13+20
+ 162 009c FFF7FEFF 		bl	UART_PutString
+ 163              	.LVL22:
+ 164              	.L10:
+  65:main.c        ****         }
+  66:main.c        ****         
+  67:main.c        ****         I2C_SlaveClearWriteBuf();
+ 165              		.loc 1 67 0
+ 166 00a0 FFF7FEFF 		bl	I2C_SlaveClearWriteBuf
+ 167              	.LVL23:
+  68:main.c        ****         I2C_SlaveClearWriteStatus();
+ 168              		.loc 1 68 0
+ 169 00a4 FFF7FEFF 		bl	I2C_SlaveClearWriteStatus
+ 170              	.LVL24:
+ 171              	.LBE3:
+  69:main.c        ****         
+  70:main.c        ****     }
+ 172              		.loc 1 70 0
+ 173 00a8 CAE7     		b	.L4
+ 174              	.L14:
+ 175 00aa 00BF     		.align	2
+ 176              	.L13:
+ 177 00ac 00000000 		.word	readBuffer
+ 178 00b0 00000000 		.word	writeBuffer
+ 179 00b4 00000000 		.word	.LC0
+ 180 00b8 20000000 		.word	.LC1
+ 181 00bc 30000000 		.word	.LC2
+ 182 00c0 54000000 		.word	.LC3
+ 183              		.cfi_endproc
+ 184              	.LFE63:
+ 185              		.size	main, .-main
+ 186              		.comm	writeBuffer,64,4
+ 187              		.comm	readBuffer,64,4
+ 188              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 189              		.align	2
+ 190              	.LC0:
+ 191 0000 56656E74 		.ascii	"Venter p\303\245 besked fra master\012\012\000"
+ 191      65722070 
+ 191      C3A52062 
+ 191      65736B65 
+ 191      64206672 
+ 192 001f 00       		.space	1
+ 193              	.LC1:
+ 194 0020 44617461 		.ascii	"Data[%d]: %d\012\000"
+ 194      5B25645D 
+ 194      3A202564 
+ 194      0A00
+ 195 002e 0000     		.space	2
+ 196              	.LC2:
+ 197 0030 56656E74 		.ascii	"Venter p\303\245 anmodning fra master\012\012\000"
+ 197      65722070 
+ 197      C3A52061 
+ 197      6E6D6F64 
+ 197      6E696E67 
+ 198 0052 0000     		.space	2
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 6
+
+
+ 199              	.LC3:
+ 200 0054 44617461 		.ascii	"Data sendt\000"
+ 200      2073656E 
+ 200      647400
+ 201              		.text
+ 202              	.Letext0:
+ 203              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 204              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 205              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 206              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 207              		.file 6 "<built-in>"
+ 208              		.file 7 "Generated_Source\\PSoC5/UART.h"
+ 209              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 210              		.file 9 "Generated_Source\\PSoC5/I2C.h"
+ 211              		.section	.debug_info,"",%progbits
+ 212              	.Ldebug_info0:
+ 213 0000 5D030000 		.4byte	0x35d
+ 214 0004 0400     		.2byte	0x4
+ 215 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 216 000a 04       		.byte	0x4
+ 217 000b 01       		.uleb128 0x1
+ 218 000c 4E000000 		.4byte	.LASF32
+ 219 0010 0C       		.byte	0xc
+ 220 0011 E5010000 		.4byte	.LASF33
+ 221 0015 80010000 		.4byte	.LASF34
+ 222 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 223 001d 00000000 		.4byte	0
+ 224 0021 00000000 		.4byte	.Ldebug_line0
+ 225 0025 02       		.uleb128 0x2
+ 226 0026 01       		.byte	0x1
+ 227 0027 06       		.byte	0x6
+ 228 0028 50020000 		.4byte	.LASF0
+ 229 002c 02       		.uleb128 0x2
+ 230 002d 01       		.byte	0x1
+ 231 002e 08       		.byte	0x8
+ 232 002f 40000000 		.4byte	.LASF1
+ 233 0033 02       		.uleb128 0x2
+ 234 0034 02       		.byte	0x2
+ 235 0035 05       		.byte	0x5
+ 236 0036 07020000 		.4byte	.LASF2
+ 237 003a 02       		.uleb128 0x2
+ 238 003b 02       		.byte	0x2
+ 239 003c 07       		.byte	0x7
+ 240 003d FE000000 		.4byte	.LASF3
+ 241 0041 03       		.uleb128 0x3
+ 242 0042 00000000 		.4byte	.LASF9
+ 243 0046 02       		.byte	0x2
+ 244 0047 3F       		.byte	0x3f
+ 245 0048 4C000000 		.4byte	0x4c
+ 246 004c 02       		.uleb128 0x2
+ 247 004d 04       		.byte	0x4
+ 248 004e 05       		.byte	0x5
+ 249 004f 30020000 		.4byte	.LASF4
+ 250 0053 02       		.uleb128 0x2
+ 251 0054 04       		.byte	0x4
+ 252 0055 07       		.byte	0x7
+ 253 0056 EC000000 		.4byte	.LASF5
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 7
+
+
+ 254 005a 02       		.uleb128 0x2
+ 255 005b 08       		.byte	0x8
+ 256 005c 05       		.byte	0x5
+ 257 005d D7010000 		.4byte	.LASF6
+ 258 0061 02       		.uleb128 0x2
+ 259 0062 08       		.byte	0x8
+ 260 0063 07       		.byte	0x7
+ 261 0064 52010000 		.4byte	.LASF7
+ 262 0068 04       		.uleb128 0x4
+ 263 0069 04       		.byte	0x4
+ 264 006a 05       		.byte	0x5
+ 265 006b 696E7400 		.ascii	"int\000"
+ 266 006f 02       		.uleb128 0x2
+ 267 0070 04       		.byte	0x4
+ 268 0071 07       		.byte	0x7
+ 269 0072 45010000 		.4byte	.LASF8
+ 270 0076 03       		.uleb128 0x3
+ 271 0077 C6010000 		.4byte	.LASF10
+ 272 007b 03       		.byte	0x3
+ 273 007c 2C       		.byte	0x2c
+ 274 007d 41000000 		.4byte	0x41
+ 275 0081 05       		.uleb128 0x5
+ 276 0082 11020000 		.4byte	.LASF11
+ 277 0086 04       		.byte	0x4
+ 278 0087 E801     		.2byte	0x1e8
+ 279 0089 2C000000 		.4byte	0x2c
+ 280 008d 02       		.uleb128 0x2
+ 281 008e 04       		.byte	0x4
+ 282 008f 04       		.byte	0x4
+ 283 0090 3A000000 		.4byte	.LASF12
+ 284 0094 02       		.uleb128 0x2
+ 285 0095 08       		.byte	0x8
+ 286 0096 04       		.byte	0x4
+ 287 0097 29010000 		.4byte	.LASF13
+ 288 009b 02       		.uleb128 0x2
+ 289 009c 01       		.byte	0x1
+ 290 009d 08       		.byte	0x8
+ 291 009e EC010000 		.4byte	.LASF14
+ 292 00a2 02       		.uleb128 0x2
+ 293 00a3 08       		.byte	0x8
+ 294 00a4 04       		.byte	0x4
+ 295 00a5 44020000 		.4byte	.LASF15
+ 296 00a9 02       		.uleb128 0x2
+ 297 00aa 04       		.byte	0x4
+ 298 00ab 07       		.byte	0x7
+ 299 00ac CE010000 		.4byte	.LASF16
+ 300 00b0 06       		.uleb128 0x6
+ 301 00b1 04       		.byte	0x4
+ 302 00b2 9B000000 		.4byte	0x9b
+ 303 00b6 06       		.uleb128 0x6
+ 304 00b7 04       		.byte	0x4
+ 305 00b8 BC000000 		.4byte	0xbc
+ 306 00bc 07       		.uleb128 0x7
+ 307 00bd 9B000000 		.4byte	0x9b
+ 308 00c1 08       		.uleb128 0x8
+ 309 00c2 30010000 		.4byte	.LASF35
+ 310 00c6 01       		.byte	0x1
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 8
+
+
+ 311 00c7 16       		.byte	0x16
+ 312 00c8 68000000 		.4byte	0x68
+ 313 00cc 00000000 		.4byte	.LFB63
+ 314 00d0 C4000000 		.4byte	.LFE63-.LFB63
+ 315 00d4 01       		.uleb128 0x1
+ 316 00d5 9C       		.byte	0x9c
+ 317 00d6 94020000 		.4byte	0x294
+ 318 00da 09       		.uleb128 0x9
+ 319 00db 1E000000 		.4byte	.LBB2
+ 320 00df 14000000 		.4byte	.LBE2-.LBB2
+ 321 00e3 F5000000 		.4byte	0xf5
+ 322 00e7 0A       		.uleb128 0xa
+ 323 00e8 6900     		.ascii	"i\000"
+ 324 00ea 01       		.byte	0x1
+ 325 00eb 22       		.byte	0x22
+ 326 00ec 68000000 		.4byte	0x68
+ 327 00f0 00000000 		.4byte	.LLST0
+ 328 00f4 00       		.byte	0
+ 329 00f5 09       		.uleb128 0x9
+ 330 00f6 32000000 		.4byte	.LBB3
+ 331 00fa 76000000 		.4byte	.LBE3-.LBB3
+ 332 00fe 4B020000 		.4byte	0x24b
+ 333 0102 0B       		.uleb128 0xb
+ 334 0103 DC000000 		.4byte	.LASF17
+ 335 0107 01       		.byte	0x1
+ 336 0108 2E       		.byte	0x2e
+ 337 0109 81000000 		.4byte	0x81
+ 338 010d 01       		.uleb128 0x1
+ 339 010e 55       		.byte	0x55
+ 340 010f 09       		.uleb128 0x9
+ 341 0110 50000000 		.4byte	.LBB4
+ 342 0114 1E000000 		.4byte	.LBE4-.LBB4
+ 343 0118 93010000 		.4byte	0x193
+ 344 011c 0A       		.uleb128 0xa
+ 345 011d 6900     		.ascii	"i\000"
+ 346 011f 01       		.byte	0x1
+ 347 0120 2F       		.byte	0x2f
+ 348 0121 68000000 		.4byte	0x68
+ 349 0125 1F000000 		.4byte	.LLST1
+ 350 0129 0C       		.uleb128 0xc
+ 351 012a 54000000 		.4byte	.LBB5
+ 352 012e 14000000 		.4byte	.LBE5-.LBB5
+ 353 0132 0D       		.uleb128 0xd
+ 354 0133 6D736700 		.ascii	"msg\000"
+ 355 0137 01       		.byte	0x1
+ 356 0138 31       		.byte	0x31
+ 357 0139 94020000 		.4byte	0x294
+ 358 013d 03       		.uleb128 0x3
+ 359 013e 91       		.byte	0x91
+ 360 013f BC7F     		.sleb128 -68
+ 361 0141 0E       		.uleb128 0xe
+ 362 0142 80020000 		.4byte	.LASF21
+ 363 0146 06       		.byte	0x6
+ 364 0147 00       		.byte	0
+ 365 0148 68000000 		.4byte	0x68
+ 366 014c 5C010000 		.4byte	0x15c
+ 367 0150 0F       		.uleb128 0xf
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 9
+
+
+ 368 0151 B0000000 		.4byte	0xb0
+ 369 0155 0F       		.uleb128 0xf
+ 370 0156 B6000000 		.4byte	0xb6
+ 371 015a 10       		.uleb128 0x10
+ 372 015b 00       		.byte	0
+ 373 015c 11       		.uleb128 0x11
+ 374 015d 62000000 		.4byte	.LVL13
+ 375 0161 E7020000 		.4byte	0x2e7
+ 376 0165 80010000 		.4byte	0x180
+ 377 0169 12       		.uleb128 0x12
+ 378 016a 01       		.uleb128 0x1
+ 379 016b 50       		.byte	0x50
+ 380 016c 03       		.uleb128 0x3
+ 381 016d 91       		.byte	0x91
+ 382 016e BC7F     		.sleb128 -68
+ 383 0170 12       		.uleb128 0x12
+ 384 0171 01       		.uleb128 0x1
+ 385 0172 51       		.byte	0x51
+ 386 0173 05       		.uleb128 0x5
+ 387 0174 03       		.byte	0x3
+ 388 0175 20000000 		.4byte	.LC1
+ 389 0179 12       		.uleb128 0x12
+ 390 017a 01       		.uleb128 0x1
+ 391 017b 52       		.byte	0x52
+ 392 017c 02       		.uleb128 0x2
+ 393 017d 74       		.byte	0x74
+ 394 017e 00       		.sleb128 0
+ 395 017f 00       		.byte	0
+ 396 0180 13       		.uleb128 0x13
+ 397 0181 68000000 		.4byte	.LVL14
+ 398 0185 F2020000 		.4byte	0x2f2
+ 399 0189 12       		.uleb128 0x12
+ 400 018a 01       		.uleb128 0x1
+ 401 018b 50       		.byte	0x50
+ 402 018c 03       		.uleb128 0x3
+ 403 018d 91       		.byte	0x91
+ 404 018e BC7F     		.sleb128 -68
+ 405 0190 00       		.byte	0
+ 406 0191 00       		.byte	0
+ 407 0192 00       		.byte	0
+ 408 0193 11       		.uleb128 0x11
+ 409 0194 38000000 		.4byte	.LVL7
+ 410 0198 F2020000 		.4byte	0x2f2
+ 411 019c AA010000 		.4byte	0x1aa
+ 412 01a0 12       		.uleb128 0x12
+ 413 01a1 01       		.uleb128 0x1
+ 414 01a2 50       		.byte	0x50
+ 415 01a3 05       		.uleb128 0x5
+ 416 01a4 03       		.byte	0x3
+ 417 01a5 00000000 		.4byte	.LC0
+ 418 01a9 00       		.byte	0
+ 419 01aa 11       		.uleb128 0x11
+ 420 01ab 40000000 		.4byte	.LVL8
+ 421 01af FD020000 		.4byte	0x2fd
+ 422 01b3 BF010000 		.4byte	0x1bf
+ 423 01b7 12       		.uleb128 0x12
+ 424 01b8 01       		.uleb128 0x1
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 10
+
+
+ 425 01b9 50       		.byte	0x50
+ 426 01ba 03       		.uleb128 0x3
+ 427 01bb 0A       		.byte	0xa
+ 428 01bc F401     		.2byte	0x1f4
+ 429 01be 00       		.byte	0
+ 430 01bf 14       		.uleb128 0x14
+ 431 01c0 44000000 		.4byte	.LVL9
+ 432 01c4 08030000 		.4byte	0x308
+ 433 01c8 14       		.uleb128 0x14
+ 434 01c9 4E000000 		.4byte	.LVL10
+ 435 01cd 13030000 		.4byte	0x313
+ 436 01d1 14       		.uleb128 0x14
+ 437 01d2 72000000 		.4byte	.LVL16
+ 438 01d6 1E030000 		.4byte	0x31e
+ 439 01da 14       		.uleb128 0x14
+ 440 01db 76000000 		.4byte	.LVL17
+ 441 01df 29030000 		.4byte	0x329
+ 442 01e3 11       		.uleb128 0x11
+ 443 01e4 7E000000 		.4byte	.LVL18
+ 444 01e8 F2020000 		.4byte	0x2f2
+ 445 01ec FA010000 		.4byte	0x1fa
+ 446 01f0 12       		.uleb128 0x12
+ 447 01f1 01       		.uleb128 0x1
+ 448 01f2 50       		.byte	0x50
+ 449 01f3 05       		.uleb128 0x5
+ 450 01f4 03       		.byte	0x3
+ 451 01f5 30000000 		.4byte	.LC2
+ 452 01f9 00       		.byte	0
+ 453 01fa 11       		.uleb128 0x11
+ 454 01fb 86000000 		.4byte	.LVL19
+ 455 01ff FD020000 		.4byte	0x2fd
+ 456 0203 0F020000 		.4byte	0x20f
+ 457 0207 12       		.uleb128 0x12
+ 458 0208 01       		.uleb128 0x1
+ 459 0209 50       		.byte	0x50
+ 460 020a 03       		.uleb128 0x3
+ 461 020b 0A       		.byte	0xa
+ 462 020c F401     		.2byte	0x1f4
+ 463 020e 00       		.byte	0
+ 464 020f 14       		.uleb128 0x14
+ 465 0210 8A000000 		.4byte	.LVL20
+ 466 0214 08030000 		.4byte	0x308
+ 467 0218 14       		.uleb128 0x14
+ 468 0219 94000000 		.4byte	.LVL21
+ 469 021d 08030000 		.4byte	0x308
+ 470 0221 11       		.uleb128 0x11
+ 471 0222 A0000000 		.4byte	.LVL22
+ 472 0226 F2020000 		.4byte	0x2f2
+ 473 022a 38020000 		.4byte	0x238
+ 474 022e 12       		.uleb128 0x12
+ 475 022f 01       		.uleb128 0x1
+ 476 0230 50       		.byte	0x50
+ 477 0231 05       		.uleb128 0x5
+ 478 0232 03       		.byte	0x3
+ 479 0233 54000000 		.4byte	.LC3
+ 480 0237 00       		.byte	0
+ 481 0238 14       		.uleb128 0x14
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 11
+
+
+ 482 0239 A4000000 		.4byte	.LVL23
+ 483 023d 1E030000 		.4byte	0x31e
+ 484 0241 14       		.uleb128 0x14
+ 485 0242 A8000000 		.4byte	.LVL24
+ 486 0246 29030000 		.4byte	0x329
+ 487 024a 00       		.byte	0
+ 488 024b 14       		.uleb128 0x14
+ 489 024c 0A000000 		.4byte	.LVL0
+ 490 0250 34030000 		.4byte	0x334
+ 491 0254 14       		.uleb128 0x14
+ 492 0255 0E000000 		.4byte	.LVL1
+ 493 0259 3F030000 		.4byte	0x33f
+ 494 025d 11       		.uleb128 0x11
+ 495 025e 16000000 		.4byte	.LVL2
+ 496 0262 4A030000 		.4byte	0x34a
+ 497 0266 7A020000 		.4byte	0x27a
+ 498 026a 12       		.uleb128 0x12
+ 499 026b 01       		.uleb128 0x1
+ 500 026c 50       		.byte	0x50
+ 501 026d 05       		.uleb128 0x5
+ 502 026e 03       		.byte	0x3
+ 503 026f 00000000 		.4byte	readBuffer
+ 504 0273 12       		.uleb128 0x12
+ 505 0274 01       		.uleb128 0x1
+ 506 0275 51       		.byte	0x51
+ 507 0276 02       		.uleb128 0x2
+ 508 0277 08       		.byte	0x8
+ 509 0278 40       		.byte	0x40
+ 510 0279 00       		.byte	0
+ 511 027a 13       		.uleb128 0x13
+ 512 027b 1E000000 		.4byte	.LVL3
+ 513 027f 55030000 		.4byte	0x355
+ 514 0283 12       		.uleb128 0x12
+ 515 0284 01       		.uleb128 0x1
+ 516 0285 50       		.byte	0x50
+ 517 0286 05       		.uleb128 0x5
+ 518 0287 03       		.byte	0x3
+ 519 0288 00000000 		.4byte	writeBuffer
+ 520 028c 12       		.uleb128 0x12
+ 521 028d 01       		.uleb128 0x1
+ 522 028e 51       		.byte	0x51
+ 523 028f 02       		.uleb128 0x2
+ 524 0290 08       		.byte	0x8
+ 525 0291 40       		.byte	0x40
+ 526 0292 00       		.byte	0
+ 527 0293 00       		.byte	0
+ 528 0294 15       		.uleb128 0x15
+ 529 0295 9B000000 		.4byte	0x9b
+ 530 0299 A4020000 		.4byte	0x2a4
+ 531 029d 16       		.uleb128 0x16
+ 532 029e A9000000 		.4byte	0xa9
+ 533 02a2 31       		.byte	0x31
+ 534 02a3 00       		.byte	0
+ 535 02a4 17       		.uleb128 0x17
+ 536 02a5 1C010000 		.4byte	.LASF18
+ 537 02a9 05       		.byte	0x5
+ 538 02aa 1207     		.2byte	0x712
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 12
+
+
+ 539 02ac B0020000 		.4byte	0x2b0
+ 540 02b0 18       		.uleb128 0x18
+ 541 02b1 76000000 		.4byte	0x76
+ 542 02b5 15       		.uleb128 0x15
+ 543 02b6 81000000 		.4byte	0x81
+ 544 02ba C5020000 		.4byte	0x2c5
+ 545 02be 16       		.uleb128 0x16
+ 546 02bf A9000000 		.4byte	0xa9
+ 547 02c3 3F       		.byte	0x3f
+ 548 02c4 00       		.byte	0
+ 549 02c5 19       		.uleb128 0x19
+ 550 02c6 39020000 		.4byte	.LASF19
+ 551 02ca 01       		.byte	0x1
+ 552 02cb 13       		.byte	0x13
+ 553 02cc B5020000 		.4byte	0x2b5
+ 554 02d0 05       		.uleb128 0x5
+ 555 02d1 03       		.byte	0x3
+ 556 02d2 00000000 		.4byte	readBuffer
+ 557 02d6 19       		.uleb128 0x19
+ 558 02d7 0A000000 		.4byte	.LASF20
+ 559 02db 01       		.byte	0x1
+ 560 02dc 14       		.byte	0x14
+ 561 02dd B5020000 		.4byte	0x2b5
+ 562 02e1 05       		.uleb128 0x5
+ 563 02e2 03       		.byte	0x3
+ 564 02e3 00000000 		.4byte	writeBuffer
+ 565 02e7 1A       		.uleb128 0x1a
+ 566 02e8 80020000 		.4byte	.LASF21
+ 567 02ec 80020000 		.4byte	.LASF21
+ 568 02f0 06       		.byte	0x6
+ 569 02f1 00       		.byte	0
+ 570 02f2 1A       		.uleb128 0x1a
+ 571 02f3 71020000 		.4byte	.LASF22
+ 572 02f7 71020000 		.4byte	.LASF22
+ 573 02fb 07       		.byte	0x7
+ 574 02fc 8B       		.byte	0x8b
+ 575 02fd 1A       		.uleb128 0x1a
+ 576 02fe 88020000 		.4byte	.LASF23
+ 577 0302 88020000 		.4byte	.LASF23
+ 578 0306 08       		.byte	0x8
+ 579 0307 76       		.byte	0x76
+ 580 0308 1A       		.uleb128 0x1a
+ 581 0309 35010000 		.4byte	.LASF24
+ 582 030d 35010000 		.4byte	.LASF24
+ 583 0311 09       		.byte	0x9
+ 584 0312 BE       		.byte	0xbe
+ 585 0313 1A       		.uleb128 0x1a
+ 586 0314 17020000 		.4byte	.LASF25
+ 587 0318 17020000 		.4byte	.LASF25
+ 588 031c 09       		.byte	0x9
+ 589 031d CA       		.byte	0xca
+ 590 031e 1A       		.uleb128 0x1a
+ 591 031f 69010000 		.4byte	.LASF26
+ 592 0323 69010000 		.4byte	.LASF26
+ 593 0327 09       		.byte	0x9
+ 594 0328 CC       		.byte	0xcc
+ 595 0329 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 13
+
+
+ 596 032a 16000000 		.4byte	.LASF27
+ 597 032e 16000000 		.4byte	.LASF27
+ 598 0332 09       		.byte	0x9
+ 599 0333 C0       		.byte	0xc0
+ 600 0334 1A       		.uleb128 0x1a
+ 601 0335 30000000 		.4byte	.LASF28
+ 602 0339 30000000 		.4byte	.LASF28
+ 603 033d 09       		.byte	0x9
+ 604 033e 93       		.byte	0x93
+ 605 033f 1A       		.uleb128 0x1a
+ 606 0340 11010000 		.4byte	.LASF29
+ 607 0344 11010000 		.4byte	.LASF29
+ 608 0348 07       		.byte	0x7
+ 609 0349 54       		.byte	0x54
+ 610 034a 1A       		.uleb128 0x1a
+ 611 034b 5C020000 		.4byte	.LASF30
+ 612 034f 5C020000 		.4byte	.LASF30
+ 613 0353 09       		.byte	0x9
+ 614 0354 C5       		.byte	0xc5
+ 615 0355 1A       		.uleb128 0x1a
+ 616 0356 F1010000 		.4byte	.LASF31
+ 617 035a F1010000 		.4byte	.LASF31
+ 618 035e 09       		.byte	0x9
+ 619 035f C7       		.byte	0xc7
+ 620 0360 00       		.byte	0
+ 621              		.section	.debug_abbrev,"",%progbits
+ 622              	.Ldebug_abbrev0:
+ 623 0000 01       		.uleb128 0x1
+ 624 0001 11       		.uleb128 0x11
+ 625 0002 01       		.byte	0x1
+ 626 0003 25       		.uleb128 0x25
+ 627 0004 0E       		.uleb128 0xe
+ 628 0005 13       		.uleb128 0x13
+ 629 0006 0B       		.uleb128 0xb
+ 630 0007 03       		.uleb128 0x3
+ 631 0008 0E       		.uleb128 0xe
+ 632 0009 1B       		.uleb128 0x1b
+ 633 000a 0E       		.uleb128 0xe
+ 634 000b 55       		.uleb128 0x55
+ 635 000c 17       		.uleb128 0x17
+ 636 000d 11       		.uleb128 0x11
+ 637 000e 01       		.uleb128 0x1
+ 638 000f 10       		.uleb128 0x10
+ 639 0010 17       		.uleb128 0x17
+ 640 0011 00       		.byte	0
+ 641 0012 00       		.byte	0
+ 642 0013 02       		.uleb128 0x2
+ 643 0014 24       		.uleb128 0x24
+ 644 0015 00       		.byte	0
+ 645 0016 0B       		.uleb128 0xb
+ 646 0017 0B       		.uleb128 0xb
+ 647 0018 3E       		.uleb128 0x3e
+ 648 0019 0B       		.uleb128 0xb
+ 649 001a 03       		.uleb128 0x3
+ 650 001b 0E       		.uleb128 0xe
+ 651 001c 00       		.byte	0
+ 652 001d 00       		.byte	0
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 14
+
+
+ 653 001e 03       		.uleb128 0x3
+ 654 001f 16       		.uleb128 0x16
+ 655 0020 00       		.byte	0
+ 656 0021 03       		.uleb128 0x3
+ 657 0022 0E       		.uleb128 0xe
+ 658 0023 3A       		.uleb128 0x3a
+ 659 0024 0B       		.uleb128 0xb
+ 660 0025 3B       		.uleb128 0x3b
+ 661 0026 0B       		.uleb128 0xb
+ 662 0027 49       		.uleb128 0x49
+ 663 0028 13       		.uleb128 0x13
+ 664 0029 00       		.byte	0
+ 665 002a 00       		.byte	0
+ 666 002b 04       		.uleb128 0x4
+ 667 002c 24       		.uleb128 0x24
+ 668 002d 00       		.byte	0
+ 669 002e 0B       		.uleb128 0xb
+ 670 002f 0B       		.uleb128 0xb
+ 671 0030 3E       		.uleb128 0x3e
+ 672 0031 0B       		.uleb128 0xb
+ 673 0032 03       		.uleb128 0x3
+ 674 0033 08       		.uleb128 0x8
+ 675 0034 00       		.byte	0
+ 676 0035 00       		.byte	0
+ 677 0036 05       		.uleb128 0x5
+ 678 0037 16       		.uleb128 0x16
+ 679 0038 00       		.byte	0
+ 680 0039 03       		.uleb128 0x3
+ 681 003a 0E       		.uleb128 0xe
+ 682 003b 3A       		.uleb128 0x3a
+ 683 003c 0B       		.uleb128 0xb
+ 684 003d 3B       		.uleb128 0x3b
+ 685 003e 05       		.uleb128 0x5
+ 686 003f 49       		.uleb128 0x49
+ 687 0040 13       		.uleb128 0x13
+ 688 0041 00       		.byte	0
+ 689 0042 00       		.byte	0
+ 690 0043 06       		.uleb128 0x6
+ 691 0044 0F       		.uleb128 0xf
+ 692 0045 00       		.byte	0
+ 693 0046 0B       		.uleb128 0xb
+ 694 0047 0B       		.uleb128 0xb
+ 695 0048 49       		.uleb128 0x49
+ 696 0049 13       		.uleb128 0x13
+ 697 004a 00       		.byte	0
+ 698 004b 00       		.byte	0
+ 699 004c 07       		.uleb128 0x7
+ 700 004d 26       		.uleb128 0x26
+ 701 004e 00       		.byte	0
+ 702 004f 49       		.uleb128 0x49
+ 703 0050 13       		.uleb128 0x13
+ 704 0051 00       		.byte	0
+ 705 0052 00       		.byte	0
+ 706 0053 08       		.uleb128 0x8
+ 707 0054 2E       		.uleb128 0x2e
+ 708 0055 01       		.byte	0x1
+ 709 0056 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 15
+
+
+ 710 0057 19       		.uleb128 0x19
+ 711 0058 03       		.uleb128 0x3
+ 712 0059 0E       		.uleb128 0xe
+ 713 005a 3A       		.uleb128 0x3a
+ 714 005b 0B       		.uleb128 0xb
+ 715 005c 3B       		.uleb128 0x3b
+ 716 005d 0B       		.uleb128 0xb
+ 717 005e 27       		.uleb128 0x27
+ 718 005f 19       		.uleb128 0x19
+ 719 0060 49       		.uleb128 0x49
+ 720 0061 13       		.uleb128 0x13
+ 721 0062 8701     		.uleb128 0x87
+ 722 0064 19       		.uleb128 0x19
+ 723 0065 11       		.uleb128 0x11
+ 724 0066 01       		.uleb128 0x1
+ 725 0067 12       		.uleb128 0x12
+ 726 0068 06       		.uleb128 0x6
+ 727 0069 40       		.uleb128 0x40
+ 728 006a 18       		.uleb128 0x18
+ 729 006b 9742     		.uleb128 0x2117
+ 730 006d 19       		.uleb128 0x19
+ 731 006e 01       		.uleb128 0x1
+ 732 006f 13       		.uleb128 0x13
+ 733 0070 00       		.byte	0
+ 734 0071 00       		.byte	0
+ 735 0072 09       		.uleb128 0x9
+ 736 0073 0B       		.uleb128 0xb
+ 737 0074 01       		.byte	0x1
+ 738 0075 11       		.uleb128 0x11
+ 739 0076 01       		.uleb128 0x1
+ 740 0077 12       		.uleb128 0x12
+ 741 0078 06       		.uleb128 0x6
+ 742 0079 01       		.uleb128 0x1
+ 743 007a 13       		.uleb128 0x13
+ 744 007b 00       		.byte	0
+ 745 007c 00       		.byte	0
+ 746 007d 0A       		.uleb128 0xa
+ 747 007e 34       		.uleb128 0x34
+ 748 007f 00       		.byte	0
+ 749 0080 03       		.uleb128 0x3
+ 750 0081 08       		.uleb128 0x8
+ 751 0082 3A       		.uleb128 0x3a
+ 752 0083 0B       		.uleb128 0xb
+ 753 0084 3B       		.uleb128 0x3b
+ 754 0085 0B       		.uleb128 0xb
+ 755 0086 49       		.uleb128 0x49
+ 756 0087 13       		.uleb128 0x13
+ 757 0088 02       		.uleb128 0x2
+ 758 0089 17       		.uleb128 0x17
+ 759 008a 00       		.byte	0
+ 760 008b 00       		.byte	0
+ 761 008c 0B       		.uleb128 0xb
+ 762 008d 34       		.uleb128 0x34
+ 763 008e 00       		.byte	0
+ 764 008f 03       		.uleb128 0x3
+ 765 0090 0E       		.uleb128 0xe
+ 766 0091 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 16
+
+
+ 767 0092 0B       		.uleb128 0xb
+ 768 0093 3B       		.uleb128 0x3b
+ 769 0094 0B       		.uleb128 0xb
+ 770 0095 49       		.uleb128 0x49
+ 771 0096 13       		.uleb128 0x13
+ 772 0097 02       		.uleb128 0x2
+ 773 0098 18       		.uleb128 0x18
+ 774 0099 00       		.byte	0
+ 775 009a 00       		.byte	0
+ 776 009b 0C       		.uleb128 0xc
+ 777 009c 0B       		.uleb128 0xb
+ 778 009d 01       		.byte	0x1
+ 779 009e 11       		.uleb128 0x11
+ 780 009f 01       		.uleb128 0x1
+ 781 00a0 12       		.uleb128 0x12
+ 782 00a1 06       		.uleb128 0x6
+ 783 00a2 00       		.byte	0
+ 784 00a3 00       		.byte	0
+ 785 00a4 0D       		.uleb128 0xd
+ 786 00a5 34       		.uleb128 0x34
+ 787 00a6 00       		.byte	0
+ 788 00a7 03       		.uleb128 0x3
+ 789 00a8 08       		.uleb128 0x8
+ 790 00a9 3A       		.uleb128 0x3a
+ 791 00aa 0B       		.uleb128 0xb
+ 792 00ab 3B       		.uleb128 0x3b
+ 793 00ac 0B       		.uleb128 0xb
+ 794 00ad 49       		.uleb128 0x49
+ 795 00ae 13       		.uleb128 0x13
+ 796 00af 02       		.uleb128 0x2
+ 797 00b0 18       		.uleb128 0x18
+ 798 00b1 00       		.byte	0
+ 799 00b2 00       		.byte	0
+ 800 00b3 0E       		.uleb128 0xe
+ 801 00b4 2E       		.uleb128 0x2e
+ 802 00b5 01       		.byte	0x1
+ 803 00b6 3F       		.uleb128 0x3f
+ 804 00b7 19       		.uleb128 0x19
+ 805 00b8 03       		.uleb128 0x3
+ 806 00b9 0E       		.uleb128 0xe
+ 807 00ba 3A       		.uleb128 0x3a
+ 808 00bb 0B       		.uleb128 0xb
+ 809 00bc 3B       		.uleb128 0x3b
+ 810 00bd 0B       		.uleb128 0xb
+ 811 00be 27       		.uleb128 0x27
+ 812 00bf 19       		.uleb128 0x19
+ 813 00c0 49       		.uleb128 0x49
+ 814 00c1 13       		.uleb128 0x13
+ 815 00c2 3C       		.uleb128 0x3c
+ 816 00c3 19       		.uleb128 0x19
+ 817 00c4 01       		.uleb128 0x1
+ 818 00c5 13       		.uleb128 0x13
+ 819 00c6 00       		.byte	0
+ 820 00c7 00       		.byte	0
+ 821 00c8 0F       		.uleb128 0xf
+ 822 00c9 05       		.uleb128 0x5
+ 823 00ca 00       		.byte	0
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 17
+
+
+ 824 00cb 49       		.uleb128 0x49
+ 825 00cc 13       		.uleb128 0x13
+ 826 00cd 00       		.byte	0
+ 827 00ce 00       		.byte	0
+ 828 00cf 10       		.uleb128 0x10
+ 829 00d0 18       		.uleb128 0x18
+ 830 00d1 00       		.byte	0
+ 831 00d2 00       		.byte	0
+ 832 00d3 00       		.byte	0
+ 833 00d4 11       		.uleb128 0x11
+ 834 00d5 898201   		.uleb128 0x4109
+ 835 00d8 01       		.byte	0x1
+ 836 00d9 11       		.uleb128 0x11
+ 837 00da 01       		.uleb128 0x1
+ 838 00db 31       		.uleb128 0x31
+ 839 00dc 13       		.uleb128 0x13
+ 840 00dd 01       		.uleb128 0x1
+ 841 00de 13       		.uleb128 0x13
+ 842 00df 00       		.byte	0
+ 843 00e0 00       		.byte	0
+ 844 00e1 12       		.uleb128 0x12
+ 845 00e2 8A8201   		.uleb128 0x410a
+ 846 00e5 00       		.byte	0
+ 847 00e6 02       		.uleb128 0x2
+ 848 00e7 18       		.uleb128 0x18
+ 849 00e8 9142     		.uleb128 0x2111
+ 850 00ea 18       		.uleb128 0x18
+ 851 00eb 00       		.byte	0
+ 852 00ec 00       		.byte	0
+ 853 00ed 13       		.uleb128 0x13
+ 854 00ee 898201   		.uleb128 0x4109
+ 855 00f1 01       		.byte	0x1
+ 856 00f2 11       		.uleb128 0x11
+ 857 00f3 01       		.uleb128 0x1
+ 858 00f4 31       		.uleb128 0x31
+ 859 00f5 13       		.uleb128 0x13
+ 860 00f6 00       		.byte	0
+ 861 00f7 00       		.byte	0
+ 862 00f8 14       		.uleb128 0x14
+ 863 00f9 898201   		.uleb128 0x4109
+ 864 00fc 00       		.byte	0
+ 865 00fd 11       		.uleb128 0x11
+ 866 00fe 01       		.uleb128 0x1
+ 867 00ff 31       		.uleb128 0x31
+ 868 0100 13       		.uleb128 0x13
+ 869 0101 00       		.byte	0
+ 870 0102 00       		.byte	0
+ 871 0103 15       		.uleb128 0x15
+ 872 0104 01       		.uleb128 0x1
+ 873 0105 01       		.byte	0x1
+ 874 0106 49       		.uleb128 0x49
+ 875 0107 13       		.uleb128 0x13
+ 876 0108 01       		.uleb128 0x1
+ 877 0109 13       		.uleb128 0x13
+ 878 010a 00       		.byte	0
+ 879 010b 00       		.byte	0
+ 880 010c 16       		.uleb128 0x16
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 18
+
+
+ 881 010d 21       		.uleb128 0x21
+ 882 010e 00       		.byte	0
+ 883 010f 49       		.uleb128 0x49
+ 884 0110 13       		.uleb128 0x13
+ 885 0111 2F       		.uleb128 0x2f
+ 886 0112 0B       		.uleb128 0xb
+ 887 0113 00       		.byte	0
+ 888 0114 00       		.byte	0
+ 889 0115 17       		.uleb128 0x17
+ 890 0116 34       		.uleb128 0x34
+ 891 0117 00       		.byte	0
+ 892 0118 03       		.uleb128 0x3
+ 893 0119 0E       		.uleb128 0xe
+ 894 011a 3A       		.uleb128 0x3a
+ 895 011b 0B       		.uleb128 0xb
+ 896 011c 3B       		.uleb128 0x3b
+ 897 011d 05       		.uleb128 0x5
+ 898 011e 49       		.uleb128 0x49
+ 899 011f 13       		.uleb128 0x13
+ 900 0120 3F       		.uleb128 0x3f
+ 901 0121 19       		.uleb128 0x19
+ 902 0122 3C       		.uleb128 0x3c
+ 903 0123 19       		.uleb128 0x19
+ 904 0124 00       		.byte	0
+ 905 0125 00       		.byte	0
+ 906 0126 18       		.uleb128 0x18
+ 907 0127 35       		.uleb128 0x35
+ 908 0128 00       		.byte	0
+ 909 0129 49       		.uleb128 0x49
+ 910 012a 13       		.uleb128 0x13
+ 911 012b 00       		.byte	0
+ 912 012c 00       		.byte	0
+ 913 012d 19       		.uleb128 0x19
+ 914 012e 34       		.uleb128 0x34
+ 915 012f 00       		.byte	0
+ 916 0130 03       		.uleb128 0x3
+ 917 0131 0E       		.uleb128 0xe
+ 918 0132 3A       		.uleb128 0x3a
+ 919 0133 0B       		.uleb128 0xb
+ 920 0134 3B       		.uleb128 0x3b
+ 921 0135 0B       		.uleb128 0xb
+ 922 0136 49       		.uleb128 0x49
+ 923 0137 13       		.uleb128 0x13
+ 924 0138 3F       		.uleb128 0x3f
+ 925 0139 19       		.uleb128 0x19
+ 926 013a 02       		.uleb128 0x2
+ 927 013b 18       		.uleb128 0x18
+ 928 013c 00       		.byte	0
+ 929 013d 00       		.byte	0
+ 930 013e 1A       		.uleb128 0x1a
+ 931 013f 2E       		.uleb128 0x2e
+ 932 0140 00       		.byte	0
+ 933 0141 3F       		.uleb128 0x3f
+ 934 0142 19       		.uleb128 0x19
+ 935 0143 3C       		.uleb128 0x3c
+ 936 0144 19       		.uleb128 0x19
+ 937 0145 6E       		.uleb128 0x6e
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 19
+
+
+ 938 0146 0E       		.uleb128 0xe
+ 939 0147 03       		.uleb128 0x3
+ 940 0148 0E       		.uleb128 0xe
+ 941 0149 3A       		.uleb128 0x3a
+ 942 014a 0B       		.uleb128 0xb
+ 943 014b 3B       		.uleb128 0x3b
+ 944 014c 0B       		.uleb128 0xb
+ 945 014d 00       		.byte	0
+ 946 014e 00       		.byte	0
+ 947 014f 00       		.byte	0
+ 948              		.section	.debug_loc,"",%progbits
+ 949              	.Ldebug_loc0:
+ 950              	.LLST0:
+ 951 0000 1E000000 		.4byte	.LVL3
+ 952 0004 22000000 		.4byte	.LVL4
+ 953 0008 0200     		.2byte	0x2
+ 954 000a 30       		.byte	0x30
+ 955 000b 9F       		.byte	0x9f
+ 956 000c 22000000 		.4byte	.LVL4
+ 957 0010 32000000 		.4byte	.LVL6
+ 958 0014 0100     		.2byte	0x1
+ 959 0016 53       		.byte	0x53
+ 960 0017 00000000 		.4byte	0
+ 961 001b 00000000 		.4byte	0
+ 962              	.LLST1:
+ 963 001f 50000000 		.4byte	.LVL11
+ 964 0023 54000000 		.4byte	.LVL12
+ 965 0027 0200     		.2byte	0x2
+ 966 0029 30       		.byte	0x30
+ 967 002a 9F       		.byte	0x9f
+ 968 002b 54000000 		.4byte	.LVL12
+ 969 002f C4000000 		.4byte	.LFE63
+ 970 0033 0100     		.2byte	0x1
+ 971 0035 54       		.byte	0x54
+ 972 0036 00000000 		.4byte	0
+ 973 003a 00000000 		.4byte	0
+ 974              		.section	.debug_aranges,"",%progbits
+ 975 0000 1C000000 		.4byte	0x1c
+ 976 0004 0200     		.2byte	0x2
+ 977 0006 00000000 		.4byte	.Ldebug_info0
+ 978 000a 04       		.byte	0x4
+ 979 000b 00       		.byte	0
+ 980 000c 0000     		.2byte	0
+ 981 000e 0000     		.2byte	0
+ 982 0010 00000000 		.4byte	.LFB63
+ 983 0014 C4000000 		.4byte	.LFE63-.LFB63
+ 984 0018 00000000 		.4byte	0
+ 985 001c 00000000 		.4byte	0
+ 986              		.section	.debug_ranges,"",%progbits
+ 987              	.Ldebug_ranges0:
+ 988 0000 00000000 		.4byte	.LFB63
+ 989 0004 C4000000 		.4byte	.LFE63
+ 990 0008 00000000 		.4byte	0
+ 991 000c 00000000 		.4byte	0
+ 992              		.section	.debug_line,"",%progbits
+ 993              	.Ldebug_line0:
+ 994 0000 CA010000 		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 20
+
+
+ 994      02007801 
+ 994      00000201 
+ 994      FB0E0D00 
+ 994      01010101 
+ 995              	.LASF9:
+ 996 0000 5F5F696E 		.ascii	"__int32_t\000"
+ 996      7433325F 
+ 996      7400
+ 997              	.LASF20:
+ 998 000a 77726974 		.ascii	"writeBuffer\000"
+ 998      65427566 
+ 998      66657200 
+ 999              	.LASF27:
+ 1000 0016 4932435F 		.ascii	"I2C_SlaveClearWriteStatus\000"
+ 1000      536C6176 
+ 1000      65436C65 
+ 1000      61725772 
+ 1000      69746553 
+ 1001              	.LASF28:
+ 1002 0030 4932435F 		.ascii	"I2C_Start\000"
+ 1002      53746172 
+ 1002      7400
+ 1003              	.LASF12:
+ 1004 003a 666C6F61 		.ascii	"float\000"
+ 1004      7400
+ 1005              	.LASF1:
+ 1006 0040 756E7369 		.ascii	"unsigned char\000"
+ 1006      676E6564 
+ 1006      20636861 
+ 1006      7200
+ 1007              	.LASF32:
+ 1008 004e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1008      43313120 
+ 1008      352E342E 
+ 1008      31203230 
+ 1008      31363036 
+ 1009 0081 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1009      20726576 
+ 1009      6973696F 
+ 1009      6E203233 
+ 1009      37373135 
+ 1010 00b4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1010      66756E63 
+ 1010      74696F6E 
+ 1010      2D736563 
+ 1010      74696F6E 
+ 1011              	.LASF17:
+ 1012 00dc 77726974 		.ascii	"writeBufferSize\000"
+ 1012      65427566 
+ 1012      66657253 
+ 1012      697A6500 
+ 1013              	.LASF5:
+ 1014 00ec 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1014      20756E73 
+ 1014      69676E65 
+ 1014      6420696E 
+ 1014      7400
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 21
+
+
+ 1015              	.LASF3:
+ 1016 00fe 73686F72 		.ascii	"short unsigned int\000"
+ 1016      7420756E 
+ 1016      7369676E 
+ 1016      65642069 
+ 1016      6E7400
+ 1017              	.LASF29:
+ 1018 0111 55415254 		.ascii	"UART_Start\000"
+ 1018      5F537461 
+ 1018      727400
+ 1019              	.LASF18:
+ 1020 011c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1020      52784275 
+ 1020      66666572 
+ 1020      00
+ 1021              	.LASF13:
+ 1022 0129 646F7562 		.ascii	"double\000"
+ 1022      6C6500
+ 1023              	.LASF35:
+ 1024 0130 6D61696E 		.ascii	"main\000"
+ 1024      00
+ 1025              	.LASF24:
+ 1026 0135 4932435F 		.ascii	"I2C_SlaveStatus\000"
+ 1026      536C6176 
+ 1026      65537461 
+ 1026      74757300 
+ 1027              	.LASF8:
+ 1028 0145 756E7369 		.ascii	"unsigned int\000"
+ 1028      676E6564 
+ 1028      20696E74 
+ 1028      00
+ 1029              	.LASF7:
+ 1030 0152 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1030      206C6F6E 
+ 1030      6720756E 
+ 1030      7369676E 
+ 1030      65642069 
+ 1031              	.LASF26:
+ 1032 0169 4932435F 		.ascii	"I2C_SlaveClearWriteBuf\000"
+ 1032      536C6176 
+ 1032      65436C65 
+ 1032      61725772 
+ 1032      69746542 
+ 1033              	.LASF34:
+ 1034 0180 433A5C55 		.ascii	"C:\\Users\\Frederick\\Documents\\PSoC Creator\\I2C "
+ 1034      73657273 
+ 1034      5C467265 
+ 1034      64657269 
+ 1034      636B5C44 
+ 1035 01ae 5250492D 		.ascii	"RPI-PSoC\\Design01.cydsn\000"
+ 1035      50536F43 
+ 1035      5C446573 
+ 1035      69676E30 
+ 1035      312E6379 
+ 1036              	.LASF10:
+ 1037 01c6 696E7433 		.ascii	"int32_t\000"
+ 1037      325F7400 
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 22
+
+
+ 1038              	.LASF16:
+ 1039 01ce 73697A65 		.ascii	"sizetype\000"
+ 1039      74797065 
+ 1039      00
+ 1040              	.LASF6:
+ 1041 01d7 6C6F6E67 		.ascii	"long long int\000"
+ 1041      206C6F6E 
+ 1041      6720696E 
+ 1041      7400
+ 1042              	.LASF33:
+ 1043 01e5 6D61696E 		.ascii	"main.c\000"
+ 1043      2E6300
+ 1044              	.LASF14:
+ 1045 01ec 63686172 		.ascii	"char\000"
+ 1045      00
+ 1046              	.LASF31:
+ 1047 01f1 4932435F 		.ascii	"I2C_SlaveInitWriteBuf\000"
+ 1047      536C6176 
+ 1047      65496E69 
+ 1047      74577269 
+ 1047      74654275 
+ 1048              	.LASF2:
+ 1049 0207 73686F72 		.ascii	"short int\000"
+ 1049      7420696E 
+ 1049      7400
+ 1050              	.LASF11:
+ 1051 0211 75696E74 		.ascii	"uint8\000"
+ 1051      3800
+ 1052              	.LASF25:
+ 1053 0217 4932435F 		.ascii	"I2C_SlaveGetWriteBufSize\000"
+ 1053      536C6176 
+ 1053      65476574 
+ 1053      57726974 
+ 1053      65427566 
+ 1054              	.LASF4:
+ 1055 0230 6C6F6E67 		.ascii	"long int\000"
+ 1055      20696E74 
+ 1055      00
+ 1056              	.LASF19:
+ 1057 0239 72656164 		.ascii	"readBuffer\000"
+ 1057      42756666 
+ 1057      657200
+ 1058              	.LASF15:
+ 1059 0244 6C6F6E67 		.ascii	"long double\000"
+ 1059      20646F75 
+ 1059      626C6500 
+ 1060              	.LASF0:
+ 1061 0250 7369676E 		.ascii	"signed char\000"
+ 1061      65642063 
+ 1061      68617200 
+ 1062              	.LASF30:
+ 1063 025c 4932435F 		.ascii	"I2C_SlaveInitReadBuf\000"
+ 1063      536C6176 
+ 1063      65496E69 
+ 1063      74526561 
+ 1063      64427566 
+ 1064              	.LASF22:
+ARM GAS  C:\Users\FREDER~1\AppData\Local\Temp\cclxm4Pw.s 			page 23
+
+
+ 1065 0271 55415254 		.ascii	"UART_PutString\000"
+ 1065      5F507574 
+ 1065      53747269 
+ 1065      6E6700
+ 1066              	.LASF21:
+ 1067 0280 73707269 		.ascii	"sprintf\000"
+ 1067      6E746600 
+ 1068              	.LASF23:
+ 1069 0288 43794465 		.ascii	"CyDelay\000"
+ 1069      6C617900 
+ 1070              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
